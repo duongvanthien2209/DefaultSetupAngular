@@ -1,54 +1,87 @@
 extends ../base/base.pug
 
 block content
-  //- Main
-  main
-    //- Banner
-    section.banner.mt-3
-      .container
-        .row 
-          .col-12.col-lg-8.pr-lg-0
-            #carouselExampleIndicators.banner__slide.carousel.slide(data-ride='carousel')
-              ol.carousel-indicators
-                li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-                li(data-target='#carouselExampleIndicators', data-slide-to='1')
-                li(data-target='#carouselExampleIndicators', data-slide-to='2')
-              .carousel-inner
-                .carousel-item.active
-                  img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='First slide')
-                .carousel-item
-                  img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='Second slide')
-                .carousel-item
-                  img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='Third slide')
-          .col-12.col-lg-4.pl-lg-0
-            .banner__list.d-flex.flex-column.border.h-100
-              each bannerItem in banner
-                .banner__list__item
-                  span.mr-3
-                    i.fa-2x(class= `fa\x2D2x ${bannerItem.icon}`)
-                  .banner__list__item__content
-                    h4= bannerItem.title
-                    p.mb-0= bannerItem.text
-    //- End Of Banner
+  //- Banner
+  section.banner.mt-3
+    .container
+      .row 
+        .col-12.col-lg-8.pr-lg-0
+          #carouselExampleIndicators.banner__slide.carousel.slide(data-ride='carousel')
+            ol.carousel-indicators
+              li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+              li(data-target='#carouselExampleIndicators', data-slide-to='1')
+              li(data-target='#carouselExampleIndicators', data-slide-to='2')
+            .carousel-inner
+              .carousel-item.active
+                img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='First slide')
+              .carousel-item
+                img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='Second slide')
+              .carousel-item
+                img.d-block.w-100(src='./assets/images/SLIDER.jpg', alt='Third slide')
+        .col-12.col-lg-4.pl-lg-0
+          .banner__list.d-flex.flex-column.border.h-100
+            each bannerItem in banner
+              .banner__list__item
+                span.mr-3
+                  i.fa-2x(class= `fa\x2D2x ${bannerItem.icon}`)
+                .banner__list__item__content
+                  h4= bannerItem.title
+                  p.mb-0= bannerItem.text
+  //- End Of Banner
 
-    //- San pham noi bat
-    section.san-pham-noi-bat.san-pham-slide-custom
+  //- San pham noi bat
+  section.san-pham-noi-bat.san-pham-slide-custom
+    .container 
+      .san-pham-noi-bat__header.san-pham-slide-custom__header
+        +slide-custom-header(headerSlide[0])
+        .san-pham-slide-custom__header__btns
+          //- 1
+          a.btn.mr-1.d-md-none(href='#carouselExampleControls1', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-md-none(href='#carouselExampleControls1', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 2
+          a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls2', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls2', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 3
+          a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls3', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls3', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 4
+          a.btn.mr-1.d-none.d-xl-flex(href='#carouselExampleControls4', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-xl-flex(href='#carouselExampleControls4', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+      .row
+        .col-12.col-lg-3
+          +customList(sanphamnoibat, 1)
+        .col-12.col-lg-9
+          +custom-carousel-1(danhsachsanpham, 1, 1, 'col-12 col-md-6 col-xl-4 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 2, 2, 'col-12 col-md-6 col-xl-4 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 3, 4, 'col-12 col-md-6 col-xl-4 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 4, 6, 'col-12 col-md-6 col-xl-4 h-335-98px')
+
+    //- San pham moi
+    section.san-pham-moi.san-pham-slide-custom
       .container 
         .san-pham-noi-bat__header.san-pham-slide-custom__header
-          +slide-custom-header(headerSlide[0])
+          +slide-custom-header(headerSlide[1], true)
           .san-pham-slide-custom__header__btns
             //- 1
-            a.btn.mr-1.d-md-none(href='#carouselExampleControls1', role='button', data-slide='prev')
+            a.btn.mr-1.d-md-none(href='#carouselExampleControls5', role='button', data-slide='prev')
               i.fas.fa-caret-left
-            a.btn.d-md-none(href='#carouselExampleControls1', role='button', data-slide='next') 
+            a.btn.d-md-none(href='#carouselExampleControls5', role='button', data-slide='next') 
               i.fas.fa-caret-right
             //- 2
-            a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls2', role='button', data-slide='prev')
+            a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='prev')
               i.fas.fa-caret-left
-            a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls2', role='button', data-slide='next') 
+            a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='next') 
               i.fas.fa-caret-right
             //- 3
-            a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls3', role='button', data-slide='prev')
+            a.btn.mr-1.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='prev')
               i.fas.fa-caret-left
             a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls3', role='button', data-slide='next') 
               i.fas.fa-caret-right
@@ -74,7 +107,6 @@ block content
           .san-pham-slide-custom__header__btns
             //- 1
             a.btn.mr-1.d-md-none(href='#carouselExampleControls5', role='button', data-slide='prev')
-<<<<<<< HEAD
               i.fas.fa-caret-left
             a.btn.d-md-none(href='#carouselExampleControls5', role='button', data-slide='next') 
               i.fas.fa-caret-right
@@ -86,19 +118,6 @@ block content
             //- 3
             a.btn.mr-1.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='prev')
               i.fas.fa-caret-left
-=======
-              i.fas.fa-caret-left
-            a.btn.d-md-none(href='#carouselExampleControls5', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 2
-            a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 3
-            a.btn.mr-1.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='prev')
-              i.fas.fa-caret-left
->>>>>>> 5ecabce (finish task 7)
             a.btn.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='next') 
               i.fas.fa-caret-right
         .row
@@ -111,97 +130,127 @@ block content
             img.w-100.mb-30px(src="./assets/images/banner/1.png", alt="")
           .col-12.col-md-6
             img.w-100.mb-30px(src="./assets/images/banner/2.png", alt="")
-
-    //- San pham ban chay
-    section.san-pham-ban-chay.san-pham-slide-custom
-      .container 
-        .san-pham-noi-bat__header.san-pham-slide-custom__header
-          +slide-custom-header(headerSlide[2], true)
-          .san-pham-slide-custom__header__btns
-            //- 1
-            a.btn.mr-1.d-md-none(href='#carouselExampleControls8', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-md-none(href='#carouselExampleControls8', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 2
-            a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls9', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls9', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 3
-            a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls10', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls10', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 4
-            a.btn.mr-1.d-none.d-xl-flex(href='#carouselExampleControls11', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-xl-flex(href='#carouselExampleControls11', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-        .row
-          .col-12 
-            +custom-carousel-1(danhsachsanpham, 8, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
-            +custom-carousel-1(danhsachsanpham, 9, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
-            +custom-carousel-1(danhsachsanpham, 10, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
-            +custom-carousel-1(danhsachsanpham, 11, 5, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
-        .row
-          .col-12.d-md-none
-            img.w-100.mb-30px(src="./assets/images/banner/4.png", alt="")
-          .col-12.d-none.d-md-block
-            img.w-100.mb-30px(src="./assets/images/banner/3.png", alt="")
-    //- End Of San pham noi bat
-
-    //- Hang moi ve
-    section.san-pham-ban-chay.san-pham-slide-custom
-      .container 
-        .san-pham-noi-bat__header.san-pham-slide-custom__header
-          +slide-custom-header(headerSlide[3])
-          .san-pham-slide-custom__header__btns
-            //- 1
-            a.btn.mr-1.d-md-none(href='#carouselExampleControls12', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-md-none(href='#carouselExampleControls12', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 2
-            a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls13', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls13', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 3
-            a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls14', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls14', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-            //- 4
-            a.btn.mr-1.d-none.d-xl-flex(href='#carouselExampleControls15', role='button', data-slide='prev')
-              i.fas.fa-caret-left
-            a.btn.d-none.d-xl-flex(href='#carouselExampleControls15', role='button', data-slide='next') 
-              i.fas.fa-caret-right
-        .row
-          .col-12 
-            +custom-carousel-1(danhsachsanpham, 12, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
-            +custom-carousel-1(danhsachsanpham, 13, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
-            +custom-carousel-1(danhsachsanpham, 14, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
-            +custom-carousel-1(danhsachsanpham, 15, 4, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
-    //- End Of Hang moi ve
-
-    //- Logos
-    section.logos
-      .container
-        +custom-carousel-2(danhSachLogo, 16, 1, ' d-sm-none')
-        +custom-carousel-2(danhSachLogo, 17, 2, ' d-none d-sm-block d-md-none')
-        +custom-carousel-2(danhSachLogo, 18, 3, ' d-none d-md-block d-lg-none')
-        +custom-carousel-2(danhSachLogo, 19, 4, ' d-none d-lg-block d-xl-none')
-        +custom-carousel-2(danhSachLogo, 20, 5, ' d-none d-xl-block')
-    //- End Of Logos
-
-    //- Form dang ky
-    section.form-dang-ky
-      .form-dang-ky__content 
-        p Đăng ký để nhận tin tức khuyến mại hàng tuần
-        form(action="")
-          <input class="form-control form-control-lg mr-lg-2 mb-2 mb-lg-0" type="text" placeholder="Nhập email của bạn...">
-          button.btn.btn-yellow.btn-lg Đăng ký
-    //- End Of Form dang ky
   
-  //- End Of Main
+  //- San pham moi
+  section.san-pham-moi.san-pham-slide-custom
+    .container 
+      .san-pham-noi-bat__header.san-pham-slide-custom__header
+        +slide-custom-header(headerSlide[1], true)
+        .san-pham-slide-custom__header__btns
+          //- 1
+          a.btn.mr-1.d-md-none(href='#carouselExampleControls5', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-md-none(href='#carouselExampleControls5', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 2
+          a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 3
+          a.btn.mr-1.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+      .row
+        .col-12 
+          +custom-carousel-1(danhsachsanpham, 5, 1, 'col-12 col-md-6 col-lg-4 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 6, 2, 'col-12 col-md-6 col-lg-4 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 7, 3, 'col-12 col-md-6 col-lg-4 h-335-98px')
+      .row 
+        .col-12.col-md-6
+          img.w-100.mb-30px(src="./assets/images/banner/1.png", alt="")
+        .col-12.col-md-6
+          img.w-100.mb-30px(src="./assets/images/banner/2.png", alt="")
+  
+  //- San pham ban chay
+  section.san-pham-ban-chay.san-pham-slide-custom
+    .container 
+      .san-pham-noi-bat__header.san-pham-slide-custom__header
+        +slide-custom-header(headerSlide[2], true)
+        .san-pham-slide-custom__header__btns
+          //- 1
+          a.btn.mr-1.d-md-none(href='#carouselExampleControls8', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-md-none(href='#carouselExampleControls8', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 2
+          a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls9', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls9', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 3
+          a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls10', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls10', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 4
+          a.btn.mr-1.d-none.d-xl-flex(href='#carouselExampleControls11', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-xl-flex(href='#carouselExampleControls11', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+      .row
+        .col-12 
+          +custom-carousel-1(danhsachsanpham, 8, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 9, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 10, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
+          +custom-carousel-1(danhsachsanpham, 11, 5, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
+      .row
+        .col-12.d-md-none
+          img.w-100.mb-30px(src="./assets/images/banner/4.png", alt="")
+        .col-12.d-none.d-md-block
+          img.w-100.mb-30px(src="./assets/images/banner/3.png", alt="")
+  //- End Of San pham noi bat
+
+  //- Hang moi ve
+  section.san-pham-ban-chay.san-pham-slide-custom
+    .container 
+      .san-pham-noi-bat__header.san-pham-slide-custom__header
+        +slide-custom-header(headerSlide[3])
+        .san-pham-slide-custom__header__btns
+          //- 1
+          a.btn.mr-1.d-md-none(href='#carouselExampleControls12', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-md-none(href='#carouselExampleControls12', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 2
+          a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls13', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls13', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 3
+          a.btn.mr-1.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls14', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-lg-flex.d-xl-none(href='#carouselExampleControls14', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+          //- 4
+          a.btn.mr-1.d-none.d-xl-flex(href='#carouselExampleControls15', role='button', data-slide='prev')
+            i.fas.fa-caret-left
+          a.btn.d-none.d-xl-flex(href='#carouselExampleControls15', role='button', data-slide='next') 
+            i.fas.fa-caret-right
+      .row
+        .col-12 
+          +custom-carousel-1(danhsachsanpham, 12, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+          +custom-carousel-1(danhsachsanpham, 13, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+          +custom-carousel-1(danhsachsanpham, 14, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+          +custom-carousel-1(danhsachsanpham, 15, 4, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+  //- End Of Hang moi ve
+
+  //- Logos
+  section.logos
+    .container
+      +custom-carousel-2(danhSachLogo, 16, 1, ' d-sm-none')
+      +custom-carousel-2(danhSachLogo, 17, 2, ' d-none d-sm-block d-md-none')
+      +custom-carousel-2(danhSachLogo, 18, 3, ' d-none d-md-block d-lg-none')
+      +custom-carousel-2(danhSachLogo, 19, 4, ' d-none d-lg-block d-xl-none')
+      +custom-carousel-2(danhSachLogo, 20, 5, ' d-none d-xl-block')
+  //- End Of Logos
+
+  //- Form dang ky
+  section.form-dang-ky
+    .form-dang-ky__content 
+      p Đăng ký để nhận tin tức khuyến mại hàng tuần
+      form(action="")
+        <input class="form-control form-control-lg mr-lg-2 mb-2 mb-lg-0" type="text" placeholder="Nhập email của bạn...">
+        button.btn.btn-yellow.btn-lg Đăng ký
+  //- End Of Form dang ky

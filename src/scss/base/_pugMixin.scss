@@ -1,7 +1,7 @@
 // Custom List
 .custom-list {
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   &__header {
     position: relative;
@@ -57,6 +57,11 @@
 
           span {
             margin-right: .5rem;
+
+            &.custom-list__body__mau {
+              height: 20px;
+              width: 20px;
+            }
           }
 
           &:hover {
@@ -72,7 +77,6 @@
 .san-pham {
   padding: 20px 0;
   overflow: hidden;
-  // margin-bottom: 30px;
 
   &-img-top {
     // padding: 0 50px;
@@ -153,37 +157,105 @@
       }
     }
   }
-}
 
-// San Pham - LG
-.san-pham.san-pham--lg {
-  @extend .san-pham;
-  height: calc(100% - 30px);
-
-  .san-pham-img-top {
-    img {
-      width: 450px;
-      height: 450px;
-    }
-  }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    .san-pham__btns {
-      // margin-top: 170px;
-      // margin-bottom: -185px;
-    }
-  }
-
-  &:hover {
-    .card-body {
-      .san-pham__btns {
-        // margin-top: 148px;
-        // margin-bottom: 0px;
+  &.san-pham--lg {
+    height: calc(100% - 30px);
+    .san-pham-img-top {
+      img {
+        width: 450px;
+        height: 450px;
       }
+    }
+  
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  &.sanpham--unhover {
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 30px;
+    padding: 20px;
+
+    .san-pham-img-top {
+      img {
+        height: 180px;
+        width: 180px;
+      }
+    }
+
+    .card-body {
+      margin-left: 30px;
+
+      .san-pham__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        h4 {
+          order: 1;
+        }
+
+        &__stars {
+          justify-content: flex-start;
+          order: 2;
+          margin-bottom: 14px;
+        }
+
+        p {
+          order: 3;
+        }
+
+        span {
+          order: 4;
+        }
+      }
+
+      .san-pham__btns {
+        justify-content: flex-start;
+
+        margin-top: 15px;
+        margin-bottom: 0px;
+      }
+    }
+
+    &:hover {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.sanpham--small {
+    @extend .sanpham--unhover;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: none;
+
+    .san-pham-img-top {
+      img {
+        height: 80px;
+        width: 80px;
+      }
+    }
+
+    .card-body { 
+      .san-pham__content {
+        h4 {
+          text-align: left;
+        }
+
+        span {
+          text-align: left;
+        }
+      }
+    }
+
+    &:hover {
+      margin-bottom: 0;
     }
   }
 }
@@ -237,17 +309,19 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   // Custom List
-  .custom-list {
-    height: 712px;
-    margin-bottom: 30px;
-
-    &__body {
-      ul.navbar-nav {      
-
-        li.nav-item {
-          flex-grow: 1;
-          a.nav-link {
-            
+  .san-pham-noi-bat {
+    .custom-list {
+      height: 712px;
+      margin-bottom: 30px;
+  
+      &__body {
+        ul.navbar-nav {      
+  
+          li.nav-item {
+            flex-grow: 1;
+            a.nav-link {
+              
+            }
           }
         }
       }
@@ -268,9 +342,11 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   // Custom List
-  .custom-list {
-    height: 750px;
-    margin-bottom: 32px;
+  .san-pham-noi-bat {
+    .custom-list {
+      height: 750px;
+      margin-bottom: 32px;
+    }
   }
 
   // Product Item
