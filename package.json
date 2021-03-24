@@ -22,5 +22,8 @@
     "url": "https://github.com/duongvanthien2209/Setup_Gulp_Pug_Sass/issues"
   },
   "homepage": "https://github.com/duongvanthien2209/Setup_Gulp_Pug_Sass#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
