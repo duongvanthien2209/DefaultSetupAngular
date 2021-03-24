@@ -32,15 +32,38 @@ header
             i.fas.fa-search
 
   nav.navbar-header.navbar.navbar-expand-lg.navbar-dark
-    .container
+    .container(style="position: relative;")
       button.navbar-header__toggle.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        //- span.navbar-toggler-icon
         span.bar 
         span.bar 
         span.bar    
-
-      a(href="#").cart.order-lg-1 
-        i.fas.fa-shopping-cart.fa-lg
-        span.cart__badge 0
+      - 
+        var cart = [
+          { img: './assets/images/products/1.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+          { img: './assets/images/products/2.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+          { img: './assets/images/products/3.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+        ]
+      .dropdown.order-lg-1
+        a.cart.dropdown-toggle(href="#" id="dropdownMenu1" data-toggle="dropdown") 
+          i.fas.fa-shopping-cart.fa-lg
+          span.cart__badge 0
+        .dropdown-menu.dropdown-menu-right.border-0.shadow(aria-labelledby='dropdownMenu1')
+          each cartItem, index in cart
+            div(class= `cart-item${index < cart.length-1 ? ' border-bottom' : ''}`)
+              img(src=cartItem.img, alt="")
+              .cart-item__content.text-center.mx-2
+                p.cart-item__content__title.text-uppercase= cartItem.name
+                p 
+                  | 1 x  
+                  span #{cartItem.gia} Đ
+              a(href="#") 
+                i.far.fa-times-circle 
+          p.cart-total.text-uppercase.text-right
+            | Tổng tiền: 
+            span 4.560.000 Đ
+          .d-flex.justify-content-end.margin-bottom-20px.padding-right-20px
+            button.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
 
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
