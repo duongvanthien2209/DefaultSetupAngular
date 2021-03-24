@@ -195,8 +195,8 @@
 
   .cart-item {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 
     width: 300px;
 
@@ -294,6 +294,14 @@
         }
       }
     }
+  }
+}
+
+.custom-dropdown--megamenu {
+  .custom-dropdown__sub-menu {
+    background-color: transparent;
+    width: 100%;
+    padding: 0 15px;
   }
 }
 

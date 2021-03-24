@@ -15,7 +15,7 @@ block content
               th.text-center.text-uppercase(scope='col') Số lượng
               th.text-center.text-uppercase(scope='col') Thành tiền
               th.text-center.text-uppercase(scope='col') Xóa
-          tbody
+          tbody#cart-shopping-body
             each item, index in data
               - var str = ''
               if index === 0
@@ -52,3 +52,6 @@ block content
       .d-flex.justify-content-end
         button.btn.btn-dark.rounded-0.text-uppercase.mr-2 Tiếp tục mua hàng
         button.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
+
+block script
+  script(src="./assets/js/shopping-cart.js") 
