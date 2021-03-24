@@ -28,8 +28,71 @@ a:hover {
 .shadow {
   box-shadow: 0 0 10px #0000003d; }
 
+.mb-2rem {
+  margin-bottom: 2rem; }
+
+.mb-1rem {
+  margin-bottom: 1rem; }
+
+.mb-30px {
+  margin-bottom: 30px; }
+
+.mb-50px {
+  margin-bottom: 50px; }
+
+.p-10px {
+  padding: 10px; }
+
+.pb-30px {
+  padding-bottom: 30px; }
+
+.h-335-98px {
+  height: 381px; }
+
+.h-381px {
+  height: 381px; }
+
+.shadow {
+  box-shadow: 0 0 10px #0000003d; }
+
+.shadow-hover {
+  box-shadow: 0 0 5px #0000003d;
+  transition: all 0.3s ease-out; }
+  .shadow-hover:hover {
+    box-shadow: 0 0 10px #0000003d;
+    transition-delay: .3s; }
+
+button.btn-yellow {
+  color: #fff;
+  background-color: #f5bd10;
+  transition: all 0.3s ease-out; }
+  button.btn-yellow:hover {
+    background-color: #363636; }
+
+button.btn-yellow-hover-1 {
+  transition: all 0.3s ease-out; }
+  button.btn-yellow-hover-1:hover {
+    background-color: #f5bd10;
+    border-color: #f5bd10;
+    color: #fff; }
+
+button.btn-black {
+  background-color: #363636;
+  transition: all 0.3s ease-out; }
+  button.btn-black:hover {
+    background-color: #acacac; }
+
+@media (min-width: 992px) {
+  .h-335-98px {
+    height: 361px; } }
+
+@media (min-width: 1200px) {
+  .h-335-98px {
+    height: 381px; } }
+
 .custom-list {
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 20px; }
   .custom-list__header {
     position: relative;
     background-color: #202020;
@@ -57,12 +120,93 @@ a:hover {
   .custom-list__body ul.navbar-nav {
     flex-direction: column !important; }
     .custom-list__body ul.navbar-nav li.nav-item a.nav-link {
+      display: flex;
+      align-items: center;
       padding: 20px;
       color: #acacac; }
       .custom-list__body ul.navbar-nav li.nav-item a.nav-link span {
         margin-right: .5rem; }
       .custom-list__body ul.navbar-nav li.nav-item a.nav-link:hover {
         color: #f5bd10; }
+
+.san-pham, .san-pham.san-pham--lg {
+  padding: 20px 0;
+  overflow: hidden; }
+  .san-pham-img-top {
+    display: flex;
+    justify-content: center; }
+    .san-pham-img-top img {
+      width: 200px;
+      height: 200px; }
+  .san-pham .card-body {
+    padding: 0; }
+    .san-pham .card-body .san-pham__content span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ff0000; }
+    .san-pham .card-body .san-pham__content h4 {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #363636;
+      margin-bottom: 0;
+      margin: 18px 0; }
+    .san-pham .card-body .san-pham__content .san-pham__content__stars {
+      display: flex;
+      justify-content: center; }
+      .san-pham .card-body .san-pham__content .san-pham__content__stars ul {
+        display: flex;
+        margin-bottom: 0; }
+        .san-pham .card-body .san-pham__content .san-pham__content__stars ul i {
+          color: #f5bd10; }
+      .san-pham .card-body .san-pham__content .san-pham__content__stars span {
+        color: #acacac; }
+    .san-pham .card-body .san-pham__btns {
+      display: flex;
+      justify-content: center;
+      margin-top: 45px;
+      margin-bottom: -60px;
+      transition: all 0.3s ease-out; }
+      .san-pham .card-body .san-pham__btns button {
+        border-radius: 0;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #fff; }
+  .san-pham:hover {
+    margin-bottom: -30px;
+    z-index: 999; }
+    .san-pham:hover .card-body .san-pham__btns {
+      margin-top: 15px;
+      margin-bottom: 0px; }
+
+.san-pham--lg.san-pham {
+  height: calc(100% - 30px); }
+  .san-pham--lg.san-pham .san-pham-img-top img {
+    width: 450px;
+    height: 450px; }
+  .san-pham--lg.san-pham .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+
+@media (min-width: 992px) {
+  .custom-list {
+    height: 712px;
+    margin-bottom: 30px; }
+    .custom-list__body ul.navbar-nav li.nav-item {
+      flex-grow: 1; }
+  .san-pham-img-top img {
+    width: 180px;
+    height: 180px; } }
+
+@media (min-width: 1200px) {
+  .custom-list {
+    height: 750px;
+    margin-bottom: 32px; }
+  .san-pham-img-top img {
+    width: 200px;
+    height: 200px; } }
 
 .top-header {
   background-image: linear-gradient(0deg, #ebebeb 0%, #ffffff 100%); }
@@ -302,6 +446,13 @@ a:hover {
     .san-pham-slide-custom__header h2 span {
       margin-right: .5rem;
       color: #f5bd10; }
+  .san-pham-slide-custom__header__btns--first {
+    margin-right: 30px; }
+    .san-pham-slide-custom__header__btns--first button {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      font-size: 13px; }
   .san-pham-slide-custom__header__btns {
     display: flex; }
     .san-pham-slide-custom__header__btns button {
@@ -350,6 +501,52 @@ a:hover {
 .san-pham-noi-bat {
   padding: 30px 0; }
 
+.form-dang-ky {
+  position: relative;
+  padding: 60px 0;
+  background-image: url(../assets/images/bg-form.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+  .form-dang-ky__content {
+    position: relative;
+    z-index: 2; }
+    .form-dang-ky__content p {
+      font-size: 24px;
+      letter-spacing: 1px;
+      line-height: 32px;
+      color: #ffffff;
+      font-weight: 300;
+      text-align: center; }
+    .form-dang-ky__content form {
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px; }
+      .form-dang-ky__content form input {
+        border-radius: 2rem; }
+      .form-dang-ky__content form button {
+        border-radius: 2rem; }
+  .form-dang-ky::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #0000006b; }
+
 @media (min-width: 992px) {
   .banner__list__item {
-    padding: 0 30px; } }
+    padding: 0 30px; }
+  .form-dang-ky {
+    padding: 60px 0; }
+    .form-dang-ky__content form {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      margin: 0 auto; }
+      .form-dang-ky__content form input {
+        border-radius: 2rem; }
+      .form-dang-ky__content form button {
+        border-radius: 2rem; } }

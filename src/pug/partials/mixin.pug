@@ -37,13 +37,128 @@ mixin customList({ header, body }, number)
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent1', aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
         img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
     .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
-      ul.navbar-nav.w-100
+      ul.navbar-nav.w-100.h-100
         each val in body
           li.nav-item.active
-            a.nav-link(href='#')
+            a.nav-link.py-lg-0.h-100(href='#')
               span 
                 if val.icon
                   i(class= val.icon)
                 if val.img
                   img(src= val.img, alt="")
               | #{val.name} 
+
+//- "./assets/images/products/1.png"
+//- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
+mixin product(product, lg= false)
+  //- .san-pham.card.shadow-hover.border-0
+  div(class= `san-pham card border-0 shadow-hover ${lg ? 'san-pham--lg' : ''}`)
+    .san-pham-img-top
+      img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
+    .card-body
+      .san-pham__content.text-center
+        span #{product.gia}Đ
+        h4= product.name
+        .san-pham__content__stars
+          ul
+            - var i = 1;
+              while i <= product.stars
+                li 
+                  i.fas.fa-star
+                - i++
+
+            if !Number.isInteger(product.stars)
+              li 
+                i.fas.fa-star-half-alt
+                - i++
+
+            while i <= 5
+              li 
+                i.far.fa-star
+              - i++
+          span (#{product.danhGia} Đánh giá)
+      .san-pham__btns  
+        button.btn.btn-yellow.mr-2 Mua ngay
+        button.btn.btn-black Xem chi tiết
+
+mixin slide-custom-header({ title, haveBody })
+  h2.mr-auto 
+    span 
+      i.fas.fa-th-large
+    | #{title}
+  - let arr = ['Máy khoan', 'Máy in 3D', 'Máy CNC', 'Máy tiện', 'Máy khác']
+  if haveBody
+    .san-pham-slide-custom__header__btns--first.d-none.d-lg-block
+      each item, index in arr
+        button(class= `btn btn-outline-secondary btn-yellow-hover-1 rounded-0${index !== arr.length-1 ? ' mr-2' : ''}`)= item
+
+mixin custom-carousel-1(arr, carouselNumber, items, columnClass, lgClass = false, newClass = false) 
+  - let total = arr.length 
+  - let page = Math.ceil(total/items)
+  - let multiArr = []
+
+  - let i = 0;
+  - let string = "";
+  -
+    switch(items) {
+      case 2:
+        string = ' d-none d-md-block d-lg-none';
+        break;
+      case 3:
+        string =  lgClass ? ' d-none d-lg-block d-xl-none' : newClass ? ' d-none d-lg-block d-xl-none' : ' d-none d-lg-block';
+        break;
+      case 4:
+        string = newClass ? ' d-none d-xl-block' : ' d-none d-lg-block d-xl-none';
+        break;
+      case 5:
+        string = ' d-none d-xl-block';
+      case 6:
+        string = ' d-none d-xl-block';
+        break;
+      default:
+        string = ' d-md-none';
+    }
+  div(id= `#carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
+    .carousel-inner
+      while i<page
+        - let childArr = arr.slice(i*items, i*items + items)
+        div(class = `carousel-item${i === 0 ? ' active' : ''} p-10px`)
+          .row 
+            if items === 5
+              - let dem = 0;
+              while childArr.length > 0
+                - let currentChild;
+                - let index = 1;
+                if dem !== 1
+                  - index = 2;
+                  .col-3 
+                    - currentChild = childArr.slice(0, index)
+                    - childArr.splice(0, index);
+                    each product in currentChild
+                        .h-381px
+                          +product(product)
+                else
+                  .col-6
+                    - currentChild = childArr.slice(0, index)
+                    - childArr.splice(0, index);
+                    each product in currentChild
+                      +product(product, true)
+                - dem++;
+            else
+              each product, index in childArr
+                div(class= (lgClass && index === 1) && items === 5 ? lgClass : columnClass)
+                  +product(product)
+        - i++
+
+mixin custom-carousel-2(arr, carouselNumber, items, string) 
+  - let total = arr.length 
+  - let page = Math.ceil(total/items)
+  - let multiArr = []
+
+  div(id= `#carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
+    .carousel-inner
+      while i<page
+        - let childArr = arr.slice(i*items, i*items + items)
+        div(class = `carousel-item${i === 0 ? ' active' : ''}`)
+            each img in childArr
+              img(src= img, alt="")

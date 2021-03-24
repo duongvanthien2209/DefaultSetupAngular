@@ -36,3 +36,105 @@ a:hover {
 .shadow {
   box-shadow: 0 0 10px $shadow;
 }
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
+.mb-30px {
+  margin-bottom: 30px;
+}
+
+.mb-50px {
+  margin-bottom: 50px;
+}
+
+.p-10px {
+  padding: 10px;
+}
+
+.pb-30px {
+  padding-bottom: 30px;
+}
+
+.h-335-98px {
+  // height: 335.98px;
+  height: 381px;
+}
+
+.h-381px {
+  height: 381px;
+}
+
+.shadow {
+  box-shadow: 0 0 10px #0000003d;
+}
+
+.shadow-hover {
+  box-shadow: 0 0 5px #0000003d;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    box-shadow: 0 0 10px #0000003d;
+    transition-delay: .3s;
+  }
+}
+
+button.btn-yellow {
+  color: #fff;
+  background-color: $yellow;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: $font-dark;
+  }
+}
+
+button.btn-yellow-hover-1 {
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: $yellow;
+    border-color: $yellow;
+    color: #fff;
+  }
+}
+
+button.btn-black {
+  background-color: $font-dark;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: $font-dark-light;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  // .h-335-98px {
+  //   height: 591px;
+  // }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .h-335-98px {
+    height: 361px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .h-335-98px {
+    height: 381px;
+  }
+}
