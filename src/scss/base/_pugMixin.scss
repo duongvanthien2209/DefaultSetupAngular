@@ -189,6 +189,41 @@
 }
 // End Of Product Item
 
+// Breadcrumb
+.breadcrumb {
+  &-item {
+    a {
+      color: $font-dark-light;
+      font-size: 14px;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    &.active {
+      color: $font-dark;
+    }
+
+    &::before {
+      content: '' !important;
+      height: 8px;
+      width: 8px;
+
+      padding: 0 !important;
+      margin: 0 .5rem;
+
+      background-image: url(../assets/images/right-arrow1.svg);
+      background-size: cover;
+    }
+
+    &:nth-child(1)::before {
+      margin: 0;
+    }
+  }
+}
+// End Of Breadcrumb
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 

@@ -118,6 +118,46 @@ button.btn-black {
   }
 }
 
+// Custom Form
+.custom__form__title {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.custom__form__text {
+  color: $font-dark-light;
+}
+
+.custom__form__link {
+  color: $yellow;
+  text-decoration: underline;
+
+  &:hover {
+    color: $font-dark-light;
+  }
+}
+
+.custom__form {
+  .form-group {
+    label {
+      font-size: 14px;
+      color: $black-dark;
+      margin-bottom: 20px;
+
+      span {
+        color: $red;
+      }
+    }
+
+    input {
+      height: 50px;
+    }
+  }
+}
+// End Of Custom Form
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
