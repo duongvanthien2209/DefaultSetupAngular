@@ -145,10 +145,11 @@ a:hover {
     border-color: #f5bd10;
     color: #fff; }
 
-button.btn-black {
+.btn-black {
+  color: #fff;
   background-color: #363636;
   transition: all 0.3s ease-out; }
-  button.btn-black:hover {
+  .btn-black:hover {
     color: #fff;
     background-color: #acacac; }
 
@@ -742,6 +743,11 @@ button.btn-black {
         color: #acacac; }
         .navbar-header .main-header__list ul li a:hover {
           color: #f5bd10; }
+
+.custom-dropdown--megamenu .custom-dropdown__sub-menu {
+  background-color: transparent;
+  width: 100%;
+  padding: 0 15px; }
 
 .custom-dropdown--megamenu .custom-dropdown__sub-menu {
   background-color: transparent;

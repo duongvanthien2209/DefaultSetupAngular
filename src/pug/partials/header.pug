@@ -11,8 +11,8 @@ header
                   i(class= social) 
         .col-12.col-sm-4.col-lg-3
           .top-header__btns.h-100
-            a.btn.d-flex-center.border.border-top-0.border-bottom-0(href="#") Đăng ký 
-            a.btn.d-flex-center.border-right(href="#") Đăng nhập
+            a.btn.d-flex-center.border.border-top-0.border-bottom-0(href="/register.html") Đăng ký 
+            a.btn.d-flex-center.border-right(href="/login.html") Đăng nhập
   
   section.main-header
     .container
@@ -65,6 +65,4 @@ header
           .d-flex.justify-content-end.margin-bottom-20px.padding-right-20px
             button.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
 
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          +navbar__list(navbar)
+      include ./navbar-collapse.pug
