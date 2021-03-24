@@ -68,6 +68,10 @@ a:hover {
 
 @include margin('bottom', 50, 'px');
 
+@include margin('left', 15, 'px');
+
+@include margin('right', 15, 'px');
+
 .mb-30px {
   margin-bottom: 30px;
 }
@@ -278,6 +282,99 @@ button.btn-black {
 }
 // End Of Custom Dropdown
 
+// Custom Modal
+.custom-modal {
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+
+    max-width: 800px;
+
+    .modal-content__wrapper {
+      position: relative;
+
+      background-image: url(../assets/images/modal-bg.jpg);
+      background-position: center;
+      background-size: cover;
+
+      .modal-content {
+        background: transparent;
+
+        width: 800px;
+        height: 450px;
+    
+        .close {
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 1000;
+    
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    
+          border: none;
+    
+          height: 35px;
+          width: 35px;
+    
+          color: $yellow;
+    
+          opacity: 1;
+    
+          background-color: $black;
+    
+          &:hover {
+            background-color: $font-dark;
+          }
+        }
+    
+        .modal-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          z-index: 999;
+    
+          h1 {
+            font-size: 30px;
+          }
+    
+          p {
+            font-size: 16px;
+            padding: 30px 0;
+          }
+    
+          .custom-form{
+            .form-group{
+              input{
+                height: 60px;
+                width: 600px;
+              }
+            }
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 998;
+
+        background-color: $bg-dark-light-transparent;
+      }
+    }
+  }
+}
+// End Of Custom Modal
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
@@ -325,10 +422,6 @@ button.btn-black {
 
         &:hover {
           background-color: $yellow;
-
-          & > a {
-            color: #fff;
-          }
         }
       }
     }

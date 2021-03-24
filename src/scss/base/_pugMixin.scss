@@ -234,17 +234,22 @@
 
   &.sanpham--small {
     @extend .sanpham--unhover;
+    cursor: pointer;
     padding: 0;
     box-shadow: none;
 
     .san-pham-img-top {
+      margin: 0 10px;
+
       img {
-        height: 80px;
-        width: 80px !important;
+        height: 50px;
+        width: 50px !important;
       }
     }
 
     .card-body { 
+      margin-left: 0;
+      
       .san-pham__content {
         h4 {
           text-align: left;
@@ -254,10 +259,6 @@
           text-align: left;
         }
       }
-    }
-
-    &:hover {
-      margin-bottom: 0;
     }
   }
 }
@@ -446,6 +447,15 @@
       img {
         width: 200px;
         height: 200px;
+      }
+    }
+
+    &.sanpham--small {
+      .san-pham-img-top {
+        img {
+          height: 80px;
+          width: 80px !important;
+        }
       }
     }
   }
