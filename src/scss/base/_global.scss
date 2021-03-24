@@ -36,6 +36,15 @@ a:hover {
 .shadow {
   box-shadow: 0 0 10px $shadow;
 }
+// Grid
+@include grid(3, 2);
+
+.d-grid-3-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
 
 .mb-2rem {
   margin-bottom: 2rem;
@@ -44,13 +53,16 @@ a:hover {
 .mb-1rem {
   margin-bottom: 1rem;
 }
+
 @include margin('bottom', 15, 'px');
+
+@include margin('bottom', 20, 'px');
+
+@include margin('bottom', 40, 'px');
 
 @include margin('bottom', 60, 'px');
 
 @include margin('bottom', 50, 'px');
-
-// @include margin('bottom', 10.93, 'px');
 
 .mb-30px {
   margin-bottom: 30px;
@@ -63,6 +75,8 @@ a:hover {
 .mb-50px {
   margin-bottom: 50px;
 }
+
+@include padding('left', 120, 'px');
 
 .p-10px {
   padding: 10px;
@@ -185,7 +199,7 @@ button.btn-black {
 // Pagination Custom
 .pagination-custom {
   .page-item {
-    margin: 0 5px;
+    margin: 0 2.5px;
 
     .page-link {
       border-radius: 0;
@@ -193,7 +207,7 @@ button.btn-black {
 
       &:hover {
         background-color: $yellow;
-        color: #fff;
+        color: $white;
       }
     }
   }
@@ -223,5 +237,5 @@ button.btn-black {
 @media (min-width: 1200px) {
   .h-335-98px {
     height: 381px;
-  }
-}
+  } 
+}  

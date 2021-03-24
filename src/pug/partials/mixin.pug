@@ -23,62 +23,6 @@ mixin footer_component({ title, list })
             | #{listItem.name}
         else
           a(href="#")= listItem.name
-          
-//- "./assets/images/4-black-squares.svg"
-//- Cấu trúc
-//- { header: { name, icon }, body: [ { name, icon, img } ] } 
-mixin customList({ header, body, products }, number, isFixedHeight = false)
-  div(class= `custom-list navbar navbar-expand-lg p-0 shadow${products ? ' d-none d-lg-block' : ''}`)
-    .custom-list__header.w-100
-      h2 
-        span
-          i(class= header.icon)
-        | #{header.name}
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent1', aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
-        img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
-    .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
-      ul.navbar-nav.w-100.h-100 
-        each val in body
-          li.nav-item.active
-            a.nav-link.py-lg-0.h-100(href='#')
-              span 
-                if val.icon
-                  i(class= val.icon)
-                if val.img
-                  img(src= val.img, alt="")
-              | #{val.name} 
-
-//- "./assets/images/products/1.png"
-//- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
-//- mixin product(product, lg= false)
-//-   //- .san-pham.card.shadow-hover.border-0
-//-   div(class= `san-pham card border-0 shadow-hover ${lg ? 'san-pham--lg' : ''}`)
-//-     .san-pham-img-top
-//-       img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
-//-     .card-body
-//-       .san-pham__content.text-center
-//-         span #{product.gia}Đ
-//-         h4= product.name
-//-         .san-pham__content__stars
-//-       button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
-//-         img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
-//-     .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
-//-       ul.navbar-nav.w-100.h-100
-//-         if products
-//-           each product in products
-//-             li.nav-item.active
-//-               a(class=`nav-link h-100 py-0'` href='#')
-//-                 +product(product, false, false, true)
-//-         else
-//-           each val in body
-//-             li.nav-item.active
-//-               a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}` href='#')
-//-                 if val.icon
-//-                   span 
-//-                     i(class= val.icon)
-//-                 if val.mamau
-//-                   span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
-//-                 | #{val.name} 
 
 //- "./assets/images/products/1.png"
 //- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
@@ -236,3 +180,32 @@ mixin random-text(text, className= '')
     | #{text.p3}
     br
     | #{text.p3}
+    
+mixin article(article)
+  .article.border-bottom
+    img.article__img.w-100.margin-bottom-20px(src= article.img, alt="")
+    h4= article.title
+    p.article__thongtin.font-italic
+      span.mr-3= article.date 
+      span.mr-3
+        i.fas.fa-user.mr-1
+        | Đăng bởi 
+        a(href="#")= article.dangboi
+      span 
+        i.fas.fa-comments.mr-1
+        | #{article.binhluan} Bình luận
+    p.article__doc.mb-0 
+      | #{article.doc}
+      span 
+        a(href="#") [Đọc tiếp] 
+
+mixin comment(comment, index) 
+  div(class= `comment${index%2 !== 0 ? ' padding-left-120px' : ''}`)
+    .comment__img.border
+      img(src= comment.img, alt="")
+    .comment__content
+      p.comment__content__name.mb-2= comment.name
+      p.comment__content__date.mb-2
+        span.mr-auto= comment.date 
+        a(href="#") Trả lời 
+      p.comment__content__text.mb-0= comment.text

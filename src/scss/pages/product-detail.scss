@@ -140,8 +140,8 @@
             border-bottom: none !important;
 
             &.active {
-              background-color: #202020;
-              border: #202020;
+              background-color: $black;
+              border: $black;
               color: $yellow;
             }
           }
