@@ -22,7 +22,8 @@
 
     &__content {
       &__header {
-        padding-bottom: 10.93px;
+        padding-bottom: 19.92px;
+        // padding-bottom: 0px;
 
         h1 {
           font-size: 24px;
@@ -70,7 +71,7 @@
       }
 
       &__body {
-        padding: 10.93px 0;
+        padding: 19.92px 0;
 
         h5 {
           font-size: 14px;
@@ -82,7 +83,7 @@
       }
 
       &__form {
-        padding: 10.93px 0;
+        padding: 19.92px 0;
 
         label {
           font-size: 14px;
@@ -124,6 +125,25 @@
 
         button {
           height: 42px;
+        }
+      }
+
+      &__info {
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          height: 20px;
+
+          border-radius: 2px;
+          padding: 0 3px;
+
+          font-size: 12px;
+          font-weight: 500;
+
+          span {
+            font-size: 1rem;
+          } 
         }
       }
     }
