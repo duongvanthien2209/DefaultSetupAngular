@@ -27,7 +27,36 @@ function changeStars(stars) {
   return starStr;
 }
 
-async function renderCart(cart, isCartPage = false) {
+function handleChangeCartItem(element, productId) {
+  let value = parseInt(element.value);
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart) {
+    if (value <= 0) {
+      cart = cart.filter((item) => item.productId !== productId);
+    } else {
+      // console.log("111");
+      let cartItem = cart.find((item) => item.productId === productId);
+      console.log({ cartItem, value });
+      if (cartItem.number !== value) {
+        cartItem.number = value;
+      }
+    }
+    // Cập nhật lại vào local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Render lại
+    renderCart(cart, true);
+    // Render giỏ hàng
+    renderCart(cart);
+  }
+}
+
+async function renderCart(
+  cart,
+  isCartPage = false,
+  isInfoCartPage = false,
+  isComplete = false
+) {
   let total = 0;
   let str = "";
   let index = 0;
@@ -41,24 +70,34 @@ async function renderCart(cart, isCartPage = false) {
     str += isCartPage
       ? `<tr>
     <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${++index}</td>
-    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"><img src="${
+    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"><img class="img-70px-70px" src="${
       product.img
     }" alt=""></td>
     <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${
       product.title
     }</td>
-    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${parsePrice(
-      product.price
-    )} Đ</td>
-    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"> 
-      <input class="form-control mx-auto" type="number" placeholder="${
-        cartItem.number
-      }">
-    </td>
-    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${parsePrice(
+    ${
+      !isInfoCartPage
+        ? `<td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${parsePrice(
+            product.price
+          )} Đ</td>`
+        : ""
+    }
+    ${
+      isInfoCartPage || isComplete
+        ? `<td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0">${cartItem.number}</td>`
+        : `<td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"> 
+      <input class="form-control mx-auto" type="number" onChange="handleChangeCartItem(this, ${product.id})" value="${cartItem.number}">
+    </td>`
+    }
+    <td class="font-weight-bold text-center text-danger text-uppercase align-middle border-bottom-0">${parsePrice(
       cartItem.number * product.price
     )} Đ</td>
-    <td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"><a href="#"> <img src="./assets/images/close.svg" alt=""></a></td>
+    ${
+      isInfoCartPage || isComplete
+        ? ""
+        : `<td class="font-weight-bold text-center text-uppercase align-middle border-bottom-0"><button class="btn btn-outline-danger" onClick="removeItemInCart(${product.id},true)"> <img src="./assets/images/close.svg" alt=""></button></td>`
+    }
   </tr>`
       : `<div class="cart-item${
           index++ < cart.length ? " border-bottom" : ""
@@ -84,7 +123,18 @@ async function renderCart(cart, isCartPage = false) {
     cartItem.innerHTML = str;
   } else {
     let shoppingBody = document.getElementById("cart-shopping-body");
+    let shoppingCartTotal = document.getElementById("shopping-cart-total");
+    let shoppingCartTax = document.getElementById("shopping-cart-tax");
+    let shoppingCartPay = document.getElementById("shopping-cart-pay");
+
     shoppingBody.innerHTML = str;
+    shoppingCartTotal.innerText = `${total > 0 ? parsePrice(total) : 0} Đ`;
+    shoppingCartTax.innerText = `${
+      parseInt(0.05 * total) > 0 ? parsePrice(parseInt(0.05 * total)) : 0
+    } Đ`;
+    shoppingCartPay.innerText = `${
+      parseInt(0.95 * total) > 0 ? parsePrice(parseInt(0.95 * total)) : 0
+    } Đ`;
   }
 }
 
@@ -103,7 +153,7 @@ function addToCart(productId, number) {
   renderCart(cart);
 }
 
-function removeItemInCart(productId) {
+function removeItemInCart(productId, isCartPage = false) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   if (cart) {
     cart = cart.filter((item) => item.productId !== productId);
@@ -111,6 +161,7 @@ function removeItemInCart(productId) {
     // Ghi vào local storage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    if (isCartPage) renderCart(cart, isCartPage);
     renderCart(cart);
   }
 }

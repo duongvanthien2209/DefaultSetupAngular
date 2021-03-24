@@ -295,6 +295,49 @@
       }
     }
   }
+
+  .main-header__list {
+    padding: 0 10px;
+    // margin-bottom: 50px;
+
+    h5 {
+      display: flex;
+      align-items: center;
+  
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+  
+      img {
+        height: 10px;
+        width: 10px;
+        margin-right: .5rem;
+      }
+    }
+
+    ul {
+      li {
+        margin-bottom: 1rem;
+
+        a {
+          color: $font-dark-light;
+
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
+.custom-dropdown--megamenu {
+  .custom-dropdown__sub-menu {
+    background-color: transparent;
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 
 .custom-dropdown--megamenu {

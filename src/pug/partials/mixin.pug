@@ -248,12 +248,12 @@ mixin comment(comment, index)
         a(href="#") Trả lời 
       p.comment__content__text.mb-0= comment.text
 
-mixin mainHeaderList(item, mb=false) 
-  .main-header__list
-    h5 
-      img(src="./assets/images/4-black-squares.svg", alt="")
-      | #{item.title}
-    ul.list-unstyled
-      each subItem,index in item.items
-        li(class= `${index === item.items.length-1 && mb ? 'mb-0' : ''}`)
-          a(href="#")= subItem 
+mixin process(title, number) 
+  .process-custom
+    ul.bar-process
+      - var index = 1
+      while index <= 3
+        li(class= `bar-process-item${index === 1 || index === 3 ? ' mx-0' : ''}`)
+          i(class= `fas fa-check${index++ !== number ? ' d-none' : '' }`) 
+    h4.text-center= title
+

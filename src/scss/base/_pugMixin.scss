@@ -377,6 +377,54 @@
 }
 // End Of Comment
 
+// Process
+.process-custom {
+  padding: 50px 0;
+
+  .bar-process {
+    display: flex;
+    justify-content: center;
+  
+    &-item {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      height: 25px;
+      width: 25px;
+      margin: 0 100px;
+
+      color: $yellow;
+  
+      border: 3px solid $yellow;
+      border-radius: 999px;
+
+      &::before,&::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        height: 3px;
+        width: 100px;
+
+        background-color: $yellow;
+      }
+
+      &::before {
+        left: -100px;
+      }
+
+      &::after {
+        right: -100px;
+      }
+    }
+  }
+}
+// End Of Process
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
