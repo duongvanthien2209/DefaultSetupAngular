@@ -49,6 +49,10 @@ a:hover {
   margin-bottom: 30px;
 }
 
+.mb-45px {
+  margin-bottom: 45px;
+}
+
 .mb-50px {
   margin-bottom: 50px;
 }
@@ -61,6 +65,11 @@ a:hover {
   padding-bottom: 30px;
 }
 
+.py-50px {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .h-335-98px {
   // height: 335.98px;
   height: 381px;
@@ -70,22 +79,18 @@ a:hover {
   height: 381px;
 }
 
-.shadow {
-  box-shadow: 0 0 10px #0000003d;
-}
-
 .shadow-hover {
-  box-shadow: 0 0 5px #0000003d;
+  box-shadow: 0 0 5px $shadow;
   transition: all 0.3s ease-out;
 
   &:hover {
-    box-shadow: 0 0 10px #0000003d;
+    box-shadow: 0 0 10px $shadow;
     transition-delay: .3s;
   }
 }
 
 button.btn-yellow {
-  color: #fff;
+  color: $white;
   background-color: $yellow;
   transition: all 0.3s ease-out;
 
@@ -100,7 +105,7 @@ button.btn-yellow-hover-1 {
   &:hover {
     background-color: $yellow;
     border-color: $yellow;
-    color: #fff;
+    color: $white;
   }
 }
 

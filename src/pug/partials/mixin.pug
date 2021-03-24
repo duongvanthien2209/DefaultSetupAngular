@@ -118,7 +118,7 @@ mixin custom-carousel-1(arr, carouselNumber, items, columnClass, lgClass = false
       default:
         string = ' d-md-none';
     }
-  div(id= `#carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
+  div(id= `carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
     .carousel-inner
       while i<page
         - let childArr = arr.slice(i*items, i*items + items)
@@ -154,11 +154,20 @@ mixin custom-carousel-2(arr, carouselNumber, items, string)
   - let total = arr.length 
   - let page = Math.ceil(total/items)
   - let multiArr = []
+  - let i = 0
 
-  div(id= `#carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
-    .carousel-inner
+  div(id= `carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel')  
+    .carousel-inner(role="listbox")
       while i<page
         - let childArr = arr.slice(i*items, i*items + items)
-        div(class = `carousel-item${i === 0 ? ' active' : ''}`)
-            each img in childArr
-              img(src= img, alt="")
+        div(class = `carousel-item${i === 0 ? ' active' : ''} ${childArr.length}`)
+            .img-wrapper
+              each item in childArr
+                img(src= item.img, alt="")
+        -i++
+    a.carousel-control-prev(href=`#carouselExampleControls${carouselNumber}`, role='button', data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href=`#carouselExampleControls${carouselNumber}`, role='button', data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next

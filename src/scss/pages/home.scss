@@ -31,7 +31,7 @@
     &__btns {
       display: flex;
 
-      button {
+      a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -42,12 +42,14 @@
         border: 1px solid $font-dark-light;
         border-radius: 0;
 
+        color: $font-dark-light;
+
         &:hover {
           background-color: $black;
           border-color: $black;
 
           i {
-            color: #fff;
+            color: $white;
           }
         }
       }
@@ -95,18 +97,18 @@
       }
 
       &:not(.banner__list__item:last-child) {
-        border-bottom: 1px solid #dee2e6;
+        border-bottom: 1px solid $border-color;
       }
 
       &:hover {
         background-color: $yellow;
 
         i {
-          color: #fff;
+          color: $white;
         }
 
         .banner__list__item__content {
-          color: #fff;
+          color: $white;
         }
       }
     }
@@ -119,6 +121,40 @@
   padding: 30px 0;
 }
 // End Of San pham noi bat
+
+// Logos
+.logos {
+  padding: 30px;
+  background-color: $bg-dark-light;
+
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 90px;
+      width: auto;
+    }
+  }
+
+  .carousel-control-prev {
+    left: -10%;
+
+    &-icon {
+      background-image: url('../assets/images/right-arrow.svg');
+      transform: rotate(180deg);
+    }
+  }
+
+  .carousel-control-next {
+    right: -10%;
+
+    &-icon {
+      background-image: url('../assets/images/right-arrow.svg');
+    }
+  }
+}
+// End Of Logos
 
 // Form dang ky
 .form-dang-ky {
@@ -139,7 +175,7 @@
       font-size: 24px;
       letter-spacing: 1px;
       line-height: 32px;
-      color: #ffffff;
+      color: $white;
       font-weight: 300;
       text-align: center;
     }
@@ -170,14 +206,24 @@
     height: 100%;
     width: 100%;
 
-    background-color: #0000006b;
+    background-color: $black-1;
   }
 }
 // End Of Form dang ky
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+  // Logos
+  .logos {
+    padding: 30px;
+    background-color: $bg-dark-light;
 
+    .img-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  // End Of Logos
 }
 
 // Medium devices (tablets, 768px and up)

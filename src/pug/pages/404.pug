@@ -1,0 +1,25 @@
+extends ../base/base.pug
+
+block content
+  //- Header
+  include ../partials/header.pug
+  //- End Of Header
+  
+  //- Main
+  main
+    section.page-404
+      .container 
+        .row
+          .col-12.col-lg-5.order-lg-1
+            .page-404__img
+              img.w-100(src="./assets/images/products/10.png", alt="")
+          .col-12.col-lg-7
+            .page-404__content
+              h1 404 Error
+              p Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của bạn
+              p Xin vui lòng trở về trang chủ
+              button.btn.btn-lg.btn-dark.mt-3.rounded-0 Trang chủ
+
+  //- Footer
+  include ../partials/footer.pug
+  //- End Of Footer
