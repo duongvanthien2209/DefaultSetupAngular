@@ -135,7 +135,9 @@ a:hover {
   border-color: $yellow;
 
   &:hover {
-    background-color: $font-dark;
+    border-color: $yellow-dark;
+    color: $white;
+    background-color: $yellow-dark;
   }
 }
 
@@ -150,7 +152,7 @@ a:hover {
   }
 }
 
-button.btn-yellow-hover-1 {
+.btn-yellow-hover-1 {
   transition: all 0.3s ease-out;
 
   &:hover {
@@ -165,6 +167,7 @@ button.btn-black {
   transition: all 0.3s ease-out;
 
   &:hover {
+    color: $white;
     background-color: $font-dark-light;
   }
 }
@@ -360,6 +363,7 @@ button.btn-black {
 
         z-index: 998;
 
+        background-color: $bg-dark-light-transparent;
       }
     }
   }

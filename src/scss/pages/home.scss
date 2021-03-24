@@ -95,6 +95,12 @@
         }
       }
 
+      &:first-child {
+        i {
+          transform: rotate(-60deg);
+        }
+      }
+
       &:not(.banner__list__item:last-child) {
         border-bottom: 1px solid $border-color;
       }

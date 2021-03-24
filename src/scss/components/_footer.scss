@@ -128,8 +128,21 @@
     }
   }
 }
-// End Of Footer
 
+@media (min-width: 320px) {
+  // Footer
+  .main-footer {
+    &__thanhtoan {
+      ul {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+      }
+    }
+  }
+  // End Of Footer
+}
+
+// End Of Footer
 @media (min-width: 576px) {
   // Footer
   .main-footer {
@@ -161,6 +174,15 @@
     }
   }
   // End Of Footer
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main-footer {
+    h5 {
+      font-size: 13px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {}
