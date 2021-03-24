@@ -50,35 +50,35 @@ mixin customList({ header, body, products }, number, isFixedHeight = false)
 
 //- "./assets/images/products/1.png"
 //- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
-mixin product(product, lg= false)
-  //- .san-pham.card.shadow-hover.border-0
-  div(class= `san-pham card border-0 shadow-hover ${lg ? 'san-pham--lg' : ''}`)
-    .san-pham-img-top
-      img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
-    .card-body
-      .san-pham__content.text-center
-        span #{product.gia}Đ
-        h4= product.name
-        .san-pham__content__stars
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
-        img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
-    .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
-      ul.navbar-nav.w-100.h-100
-        if products
-          each product in products
-            li.nav-item.active
-              a(class=`nav-link h-100 py-0'` href='#')
-                +product(product, false, false, true)
-        else
-          each val in body
-            li.nav-item.active
-              a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}` href='#')
-                if val.icon
-                  span 
-                    i(class= val.icon)
-                if val.mamau
-                  span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
-                | #{val.name} 
+//- mixin product(product, lg= false)
+//-   //- .san-pham.card.shadow-hover.border-0
+//-   div(class= `san-pham card border-0 shadow-hover ${lg ? 'san-pham--lg' : ''}`)
+//-     .san-pham-img-top
+//-       img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
+//-     .card-body
+//-       .san-pham__content.text-center
+//-         span #{product.gia}Đ
+//-         h4= product.name
+//-         .san-pham__content__stars
+//-       button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
+//-         img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
+//-     .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
+//-       ul.navbar-nav.w-100.h-100
+//-         if products
+//-           each product in products
+//-             li.nav-item.active
+//-               a(class=`nav-link h-100 py-0'` href='#')
+//-                 +product(product, false, false, true)
+//-         else
+//-           each val in body
+//-             li.nav-item.active
+//-               a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}` href='#')
+//-                 if val.icon
+//-                   span 
+//-                     i(class= val.icon)
+//-                 if val.mamau
+//-                   span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
+//-                 | #{val.name} 
 
 //- "./assets/images/products/1.png"
 //- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
@@ -116,7 +116,7 @@ mixin product(product, lg= false, unhover = false, small =false)
                 i.far.fa-star
               - i++
           span (#{product.danhGia} Đánh giá)
-      if unhover
+        if unhover
           p= product.mota
       div(class= `san-pham__btns${small ? ' d-none' : ''}`)  
         button.btn.btn-yellow.mr-2 Mua ngay
@@ -226,3 +226,13 @@ mixin breadcrumb(arr)
               a(href=item.link)= item.name
           else
             li.breadcrumb-item.active(aria-current='page')= item.name
+
+mixin random-text(text, className= '') 
+  p(class= `${className!=='' ? className : ''}`)
+    | #{text.p1}
+    br
+    | #{text.p2}
+    br
+    | #{text.p3}
+    br
+    | #{text.p3}

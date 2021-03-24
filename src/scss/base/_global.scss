@@ -44,6 +44,13 @@ a:hover {
 .mb-1rem {
   margin-bottom: 1rem;
 }
+@include margin('bottom', 15, 'px');
+
+@include margin('bottom', 60, 'px');
+
+@include margin('bottom', 50, 'px');
+
+// @include margin('bottom', 10.93, 'px');
 
 .mb-30px {
   margin-bottom: 30px;
@@ -94,10 +101,11 @@ a:hover {
   }
 }
 
-button.btn-yellow {
+.btn-yellow {
   color: $white;
   background-color: $yellow;
   transition: all 0.3s ease-out;
+  border-color: $yellow;
 
   &:hover {
     background-color: $font-dark;
