@@ -12,18 +12,22 @@ block content
             form.form-inline.product-header__form.mr-auto
               .form-group.mr-3
                 label.font-weight-bold.mr-2(for='formGroupExampleInput1') Sắp xếp theo#{'\x3A'}
-                select#formGroupExampleInput1.custom-select.rounded-0
-                  option(selected='') Tên sản phẩm
-                  - var index = 1
-                  while index <= 3
-                    option(value=`${index}`) Sản phẩm #{index++}
+                select#select-sort.custom-select.rounded-0
+                  option(value=1) Tên sản phẩm
+                  option(value=2) Giá giảm dần
+                  option(value=3) Giá tăng dần
+                  //- - var index = 1
+                  //- while index <= 3
+                  //-   option(value=`${index}`) Sản phẩm #{index++}
               .form-group
                 label.font-weight-bold.mr-2(for='formGroupExampleInput2') Show#{'\x3A'}
-                select#formGroupExampleInput2.custom-select.rounded-0
-                  option(selected='') 0
-                  - var index1 = 1
-                  while index <= 3
-                    option(value=`${index}`)= index++
+                select#select-number.custom-select.rounded-0
+                  option(value=5) 5
+                  option(value=10) 10
+                  option(value=15) 15
+                  //- - var index1 = 1
+                  //- while index <= 3
+                  //-   option(value=`${index}`)= index++
             .product-header__btns
               label.btn.btn-outline-dark.btn-outline-yellow.mb-0.rounded-0(for="page1")
                 i.fas.fa-bars
