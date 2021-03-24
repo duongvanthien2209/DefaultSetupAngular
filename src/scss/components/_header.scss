@@ -28,13 +28,11 @@
   }
 
   .col-12 {
-    // padding: 0;
-
     .top-header__btns {
       display: flex;
   
       a {
-        flex-grow: 1;
+        width: 50%;
         height: 50px;
         font-size: 12px;
         text-transform: uppercase;
@@ -336,18 +334,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   // Header
-  // Main Header
-  .main-header {
-    // &__content {
-    //   margin-right: 20px;
-    // }
-    
-    // &__search {
-    //   width: 200px;
-    // }
   
-  }
-  // End Of Main Header
 
   // End Of Header
 }

@@ -24,7 +24,6 @@ mixin footer_component({ title, list })
         else
           a(href="#")= listItem.name
           
-//- "./assets/images/4-black-squares.svg"
 //- Cấu trúc
 //- { header: { name, icon }, body: [ { name, icon, img } ] } 
 mixin customList({ header, body, products, images, tags }, number, isFixedHeight = false, isBlog = false)
@@ -105,9 +104,6 @@ mixin product(product, lg= false, unhover = false, small =false)
       div(class= `san-pham__btns${small ? ' d-none' : ''}`)  
         button.btn.btn-yellow.mr-2 Mua ngay
         button.btn.btn-black Xem chi tiết
-      //- .san-pham__btns  
-      //-   button.btn.btn-yellow.mr-2 Mua ngay
-      //-   button.btn.btn-black Xem chi tiết
 
 mixin slide-custom-header({ title, haveBody })
   h2.mr-auto 

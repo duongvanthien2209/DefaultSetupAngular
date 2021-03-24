@@ -111,7 +111,6 @@ a:hover {
 }
 
 .h-335-98px {
-  // height: 335.98px;
   height: 381px;
 }
 
@@ -239,17 +238,14 @@ button.btn-black {
     position: relative;
     top: 100%;
     left: 0;
-    z-index: 999;
 
-    // min-width: 200px;
     min-width: 100%;
     max-height: 0;
 
-    opacity: 0;
-    visibility: hidden;
     background-color: $black;
+    overflow: hidden;
 
-    transition: all .3s;
+    transition: all 0.7s linear;
 
     &__item {
       a {
@@ -272,12 +268,8 @@ button.btn-black {
     padding-left: 20px;
   }
 
-  &:hover {
-    & > .custom-dropdown__sub-menu {
-      opacity: 1;
-      visibility: visible;
-      max-height: 1000vh;
-    }
+  &:hover > &__sub-menu {
+    max-height: 100vh;
   }
 }
 // End Of Custom Dropdown
@@ -368,7 +360,6 @@ button.btn-black {
 
         z-index: 998;
 
-        background-color: $bg-dark-light-transparent;
       }
     }
   }
@@ -382,9 +373,7 @@ button.btn-black {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  // .h-335-98px {
-  //   height: 591px;
-  // }
+  
 }
 
 // Large devices (desktops, 992px and up)
@@ -394,7 +383,7 @@ button.btn-black {
   }
 
   .shadow-lg {
-    box-shadow: 0 0 10px #0000003d;
+    box-shadow: 0 0 10px $black-shadow;
   }
 
   // Custom Dropdown
@@ -405,13 +394,13 @@ button.btn-black {
       position: absolute;
       top: 100%;
       left: 0;
+      z-index: 999;
 
       min-width: 200px;
       max-height: 0;
 
-      opacity: 0;
-      visibility: hidden;
-      background-color: #fff;
+      transition: all 0.3s linear;
+      background-color: $white;
 
       &__item {
         a {
@@ -424,6 +413,10 @@ button.btn-black {
           background-color: $yellow;
         }
       }
+    }
+
+    &:hover > &__sub-menu {
+      overflow: visible;
     }
 
     &__sub-menu--left {
