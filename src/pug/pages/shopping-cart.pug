@@ -4,40 +4,30 @@ block content
   +breadcrumb([{ link: '/home.html', name: 'Trang chủ' }, { link: '#', name: 'Giỏ hàng' }])
   section.shopping-cart
     .container
-      .table-responsive
-        table.table.table-bordered.table-custom
-          thead
-            tr
-              th.text-center.text-uppercase(scope='col') STT
-              th.text-center.text-uppercase(scope='col') Sản phẩm
-              th.text-center.text-uppercase(scope='col') Thông tin
-              th.text-center.text-uppercase(scope='col') Đơn giá
-              th.text-center.text-uppercase(scope='col') Số lượng
-              th.text-center.text-uppercase(scope='col') Thành tiền
-              th.text-center.text-uppercase(scope='col') Xóa
-          tbody#cart-shopping-body
-            each item, index in data
-              - var str = ''
-              if index === 0
-                - str = ' border-bottom-0'
-              else if index === data.length-1
-                - str = ' border-top-0'
-              else
-                - str = ' border-bottom-0 border-top-0'
-
-              tr
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`)= index+1
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`)
-                  img(src= item.img, alt="")
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`)= item.name
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`) #{item.dongia} Đ
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`) 
-                  input.form-control.mx-auto(type="number" placeholder="1")
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`) #{item.dongia} Đ
-                td(class= `font-weight-bold text-center text-uppercase align-middle${str}`)
-                  a(href="#") 
-                    img(src="./assets/images/close.svg", alt="")
-
+      table.table.table-bordered.table-custom
+        thead
+          tr
+            th.text-center.text-uppercase(scope='col') STT
+            th.text-center.text-uppercase(scope='col') Sản phẩm
+            th.text-center.text-uppercase(scope='col') Thông tin
+            th.text-center.text-uppercase(scope='col') Đơn giá
+            th.text-center.text-uppercase(scope='col') Số lượng
+            th.text-center.text-uppercase(scope='col') Thành tiền
+            th.text-center.text-uppercase(scope='col') Xóa
+        tbody#cart-shopping-body
+          each item, index in data
+            - var str = ''
+            if index === 0
+              - str = ' border-bottom-0'
+            else if index === data.length-1
+              - str = ' border-top-0'
+            else
+              - str = ' border-bottom-0 border-top-0'
+      #is-cart-empty.d-none
+        img(src="./assets/images/bored.svg", alt="Bored")
+        p.mb-0 
+          | Trang giỏ hàng hiện đang trống, 
+          a(href="/product.html") Bạn có muốn quay lại mua sắm? 
       table.table.table-bordered.table-custom.shopping-cart__thanhtoan.margin-bottom-30px.margin-top-30px
         tbody
           tr
@@ -50,8 +40,8 @@ block content
             th.text-uppercase.align-middle.text-right Thanh toán
             td#shopping-cart-pay.font-weight-bold.text-right.text-thanhtoan 7#{'\x2E'}520#{'\x2E'}000 Đ
       .d-flex.justify-content-end
-        button.btn.btn-dark.rounded-0.text-uppercase.mr-2 Tiếp tục mua hàng
-        button.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
+        a(href="./product.html").btn.btn-dark.rounded-0.text-uppercase.mr-2 Tiếp tục mua hàng
+        a(href="./info-cart.html")#btn-cart-pay.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
 
 block script
   script(src="./assets/js/shopping-cart.js") 

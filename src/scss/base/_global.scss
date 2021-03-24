@@ -258,6 +258,14 @@ a:hover {
         color: $white;
       }
     }
+
+    &.active {
+      .page-link {
+        background-color: $yellow;
+        color: $white;
+        border-color: $yellow;
+      }
+    }
   }
 }
 // End Of Pagination Custom

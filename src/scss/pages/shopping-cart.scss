@@ -61,6 +61,22 @@
   }
 }
 
+#is-cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 

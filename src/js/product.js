@@ -1,9 +1,40 @@
 const length = 50;
-const limit = 10;
+let limit = 10;
+let sort;
+
+function handleSort(evt) {
+  let value = parseInt(evt.target.value);
+  switch (value) {
+    case 1:
+      sort = { sort: "title" };
+      break;
+    case 2:
+      sort = { sort: "price", order: "desc" };
+      break;
+    case 3:
+      sort = { sort: "price", order: "asc" };
+      break;
+  }
+
+  // console.log(sort);
+
+  loadProducts(1);
+}
+
+function handleSortLimit(evt) {
+  let value = parseInt(evt.target.value);
+  limit = value;
+
+  loadProducts(1);
+}
 
 async function loadProducts(page) {
   let { data: products } = await axios.get(
-    `http://localhost:4000/products?_page=${page}&_limit=${limit}`
+    `http://localhost:4000/products?${
+      sort
+        ? `_sort=${sort.sort}${sort.order ? `&_order=${sort.order}` : ""}&`
+        : ""
+    }_page=${page}&_limit=${limit}`
   );
 
   // Render products
@@ -79,4 +110,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let currentPage = 1;
 
   loadProducts(currentPage);
+
+  let handleSortEl = document.getElementById("select-sort");
+  handleSortEl.addEventListener("change", handleSort);
+  let handleSortLimitEl = document.getElementById("select-number");
+  handleSortLimitEl.addEventListener("change", handleSortLimit);
 });
