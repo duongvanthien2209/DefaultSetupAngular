@@ -39,10 +39,7 @@ block content
     section.san-pham-noi-bat.san-pham-slide-custom
       .container 
         .san-pham-noi-bat__header.san-pham-slide-custom__header
-          h2.mr-auto 
-            span 
-              i.fas.fa-th-large
-            | Sản phẩm nổi bật
+          +slide-custom-header(headerSlide[0])
           .san-pham-slide-custom__header__btns
             button.btn.mr-1 
               i.fas.fa-caret-left
@@ -51,8 +48,73 @@ block content
         .row
           .col-12.col-lg-3
             +customList(sanphamnoibat, 1)
-          .col-12.col-lg-6
+          .col-12.col-lg-9
+            +custom-carousel-1(danhsachsanpham, 1, 1, 'col-12 col-md-6 col-xl-4 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 1, 2, 'col-12 col-md-6 col-xl-4 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 1, 4, 'col-12 col-md-6 col-xl-4 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 1, 6, 'col-12 col-md-6 col-xl-4 h-335-98px')
+
+    //- San pham moi
+    section.san-pham-moi.san-pham-slide-custom
+      .container 
+        .san-pham-noi-bat__header.san-pham-slide-custom__header
+          +slide-custom-header(headerSlide[1], true)
+          .san-pham-slide-custom__header__btns
+            button.btn.mr-1 
+              i.fas.fa-caret-left
+            button.btn 
+              i.fas.fa-caret-right
+        .row
+          .col-12 
+            +custom-carousel-1(danhsachsanpham, 2, 1, 'col-12 col-md-6 col-lg-4 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 2, 2, 'col-12 col-md-6 col-lg-4 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 2, 3, 'col-12 col-md-6 col-lg-4 h-335-98px')
+
+    //- San pham ban chay
+    section.san-pham-ban-chay.san-pham-slide-custom
+      .container 
+        .san-pham-noi-bat__header.san-pham-slide-custom__header
+          +slide-custom-header(headerSlide[2], true)
+          .san-pham-slide-custom__header__btns
+            button.btn.mr-1 
+              i.fas.fa-caret-left
+            button.btn 
+              i.fas.fa-caret-right
+        .row
+          .col-12 
+            +custom-carousel-1(danhsachsanpham, 3, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 3, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 3, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
+            +custom-carousel-1(danhsachsanpham, 3, 5, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', 'col-12 col-md-6 col-lg-4 col-xl-6 h-335-98px')
     //- End Of San pham noi bat
+
+    //- Hang moi ve
+    section.san-pham-ban-chay.san-pham-slide-custom
+      .container 
+        .san-pham-noi-bat__header.san-pham-slide-custom__header
+          +slide-custom-header(headerSlide[3])
+          .san-pham-slide-custom__header__btns
+            button.btn.mr-1 
+              i.fas.fa-caret-left
+            button.btn 
+              i.fas.fa-caret-right
+        .row
+          .col-12 
+            +custom-carousel-1(danhsachsanpham, 4, 1, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+            +custom-carousel-1(danhsachsanpham, 4, 2, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+            +custom-carousel-1(danhsachsanpham, 4, 3, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+            +custom-carousel-1(danhsachsanpham, 4, 4, 'col-12 col-md-6 col-lg-4 col-xl-3 h-335-98px', false, true)
+    //- End Of Hang moi ve
+
+    //- Form dang ky
+    section.form-dang-ky
+      .form-dang-ky__content 
+        p Đăng ký để nhận tin tức khuyến mại hàng tuần
+        form(action="")
+          <input class="form-control form-control-lg mr-lg-2 mb-2 mb-lg-0" type="text" placeholder="Nhập email của bạn...">
+          button.btn.btn-yellow.btn-lg Đăng ký
+    //- End Of Form dang ky
+  
   //- End Of Main
 
 

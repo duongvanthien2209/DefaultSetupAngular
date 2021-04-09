@@ -15,6 +15,19 @@
       }
     }
 
+    &__btns--first {
+      margin-right: 30px;
+
+      button {
+        display: inline-flex;
+        align-items: center;
+
+        height: 30px;
+
+        font-size: 13px;
+      }
+    }
+
     &__btns {
       display: flex;
 
@@ -107,6 +120,61 @@
 }
 // End Of San pham noi bat
 
+// Form dang ky
+.form-dang-ky {
+  position: relative;
+
+  padding: 60px 0;
+
+  background-image: url(../assets/images/bg-form.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    p {
+      font-size: 24px;
+      letter-spacing: 1px;
+      line-height: 32px;
+      color: #ffffff;
+      font-weight: 300;
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px;
+  
+      input {
+        border-radius: 2rem;
+      }
+  
+      button {
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: #0000006b;
+  }
+}
+// End Of Form dang ky
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
@@ -128,6 +196,29 @@
     }
   }
   // End Of Banner
+
+  // Form dang ky
+  .form-dang-ky {
+    padding: 60px 0;
+
+    &__content {
+      form {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin: 0 auto;
+    
+        input {
+          border-radius: 2rem;
+        }
+    
+        button {
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+// End Of Form dang ky
 }
 
 // Extra large devices (large desktops, 1200px and up)
