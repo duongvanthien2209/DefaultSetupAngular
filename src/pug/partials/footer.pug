@@ -17,7 +17,7 @@ footer
             p.mb-1rem
               span.mr-2
                 i.fas.fa-envelope
-              | support@dkt.com.vn
+              | support@dkt#{'\x2E'}com#{'\x2E'}vn
             p
               span.mr-2
                 i.fas.fa-mobile-alt
@@ -44,7 +44,7 @@ footer
                   img(src= `./assets/images/logo/logo_${index++}.png`, alt="")
         .col-12.col-lg-6 
           .main-footer__giaidap
-            p Giải đáp nhanh:
+            p Giải đáp nhanh#{'\x3A'}
             .main-footer__giaidap__content 
               .main-footer__giaidap__item
                 span.main-footer__giaidap__item__logo
@@ -65,10 +65,10 @@ footer
         p.mr-1
           | Bản quyền thuộc về 
           span Design Team
-          | .
+          | #{'\x2E'}
         p 
           | Phát triển bởi 
           span Bizweb
-          | .
+          | #{'\x2E'}
       ul.bottom-footer__links.nav.justify-content-between
         +navbar__list(navbar, true)
