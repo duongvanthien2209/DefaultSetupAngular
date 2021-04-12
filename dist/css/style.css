@@ -25,15 +25,6 @@ a:hover {
 .mb-1rem {
   margin-bottom: 1rem; }
 
-.shadow {
-  box-shadow: 0 0 10px #0000003d; }
-
-.mb-2rem {
-  margin-bottom: 2rem; }
-
-.mb-1rem {
-  margin-bottom: 1rem; }
-
 .mb-30px {
   margin-bottom: 30px; }
 
@@ -49,6 +40,10 @@ a:hover {
 .pb-30px {
   padding-bottom: 30px; }
 
+.py-30px {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
 .py-50px {
   padding-top: 50px;
   padding-bottom: 50px; }
@@ -58,6 +53,9 @@ a:hover {
 
 .h-381px {
   height: 381px; }
+
+.shadow {
+  box-shadow: 0 0 10px #0000003d; }
 
 .shadow-hover {
   box-shadow: 0 0 5px #0000003d;
@@ -85,6 +83,31 @@ button.btn-black {
   transition: all 0.3s ease-out; }
   button.btn-black:hover {
     background-color: #acacac; }
+
+.custom__form__title {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 30px; }
+
+.custom__form__text {
+  color: #acacac; }
+
+.custom__form__link {
+  color: #f5bd10;
+  text-decoration: underline; }
+  .custom__form__link:hover {
+    color: #acacac; }
+
+.custom__form .form-group label {
+  font-size: 14px;
+  color: #252525;
+  margin-bottom: 20px; }
+  .custom__form .form-group label span {
+    color: #ff0000; }
+
+.custom__form .form-group input {
+  height: 50px; }
 
 @media (min-width: 992px) {
   .h-335-98px {
@@ -193,6 +216,27 @@ button.btn-black {
     display: flex;
     flex-direction: column;
     justify-content: flex-end; }
+
+.breadcrumb-item a {
+  color: #acacac;
+  font-size: 14px; }
+  .breadcrumb-item a:hover {
+    color: #f5bd10; }
+
+.breadcrumb-item.active {
+  color: #363636; }
+
+.breadcrumb-item::before {
+  content: '' !important;
+  height: 8px;
+  width: 8px;
+  padding: 0 !important;
+  margin: 0 .5rem;
+  background-image: url(../assets/images/right-arrow1.svg);
+  background-size: cover; }
+
+.breadcrumb-item:nth-child(1)::before {
+  margin: 0; }
 
 @media (min-width: 992px) {
   .custom-list {
@@ -493,7 +537,7 @@ button.btn-black {
       font-size: 16px;
       text-transform: uppercase; }
     .banner__list__item:not(.banner__list__item:last-child) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      border-bottom: 1px solid #dee2e6; }
     .banner__list__item:hover {
       background-color: #f5bd10; }
       .banner__list__item:hover i {
@@ -537,7 +581,7 @@ button.btn-black {
       font-size: 24px;
       letter-spacing: 1px;
       line-height: 32px;
-      color: #fff;
+      color: #ffffff;
       font-weight: 300;
       text-align: center; }
     .form-dang-ky__content form {
@@ -596,7 +640,7 @@ button.btn-black {
       text-transform: uppercase; }
     .page-404__content p {
       letter-spacing: 1px;
-      color: #202020;
+      color: #252525;
       margin-bottom: 0; }
 
 @media (min-width: 992px) {
@@ -607,3 +651,11 @@ button.btn-black {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px; } }
+
+.register__content {
+  padding-top: 20px;
+  padding-bottom: 50px; }
+
+.login__content {
+  padding-top: 20px;
+  padding-bottom: 50px; }

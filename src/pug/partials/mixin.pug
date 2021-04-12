@@ -171,3 +171,14 @@ mixin custom-carousel-2(arr, carouselNumber, items, string)
     a.carousel-control-next(href=`#carouselExampleControls${carouselNumber}`, role='button', data-slide='next')
       span.carousel-control-next-icon(aria-hidden='true')
       span.sr-only Next
+
+mixin breadcrumb(arr) 
+  nav(aria-label='breadcrumb')
+    .container
+      ol.breadcrumb.bg-white.pl-0.py-30px
+        each item,index in arr
+          if index !== arr.length-1
+            li.breadcrumb-item
+              a(href=item.link)= item.name
+          else
+            li.breadcrumb-item.active(aria-current='page')= item.name

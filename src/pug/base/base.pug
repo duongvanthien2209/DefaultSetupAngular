@@ -16,7 +16,17 @@ html
   body
     include ../partials/mixin.pug
     include ./variables.pug
-    block content
+
+    //- Header
+    include ../partials/header.pug
+    //- End Of Header
+
+    main
+      block content
+
+    //- Footer
+    include ../partials/footer.pug
+    //- End Of Footer
 
     //- Optional JavaScript
     //- jQuery first, then Popper.js, then Bootstrap JS

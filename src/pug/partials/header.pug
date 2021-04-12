@@ -3,7 +3,7 @@ header
     .container
       .row
         .d-none.d-md-block.col-md-3.mr-md-auto
-          - let socials = ['fab fa-facebook-f', 'fab fa-google-plus-g', 'fab fa-instagram', 'fab fa-twitter']
+          - var socials = ['fab fa-facebook-f', 'fab fa-google-plus-g', 'fab fa-instagram', 'fab fa-twitter']
           ul.socials.d-flex
             each social, index in socials
               li(class= `socials__item${!index ? ' active' : ''}`)

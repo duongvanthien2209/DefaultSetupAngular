@@ -1,0 +1,47 @@
+extends ../base/base.pug
+
+block content
+  +breadcrumb([{ link: '#', name: 'Trang chủ' }, { link: '#', name: 'Đăng nhập' }])
+  section.login__content
+    .container
+      form.custom__form.mb-5
+        h5.custom__form__title Thông tin cá nhân#{'\x3A'}
+        .form-row
+          .form-group.col-12.col-md-6 
+            label(for='name') 
+              | Họ và tên#{'\x3A'}
+              span= '\x2A'
+            input#name.form-control.rounded-0(type='text')
+          .form-group.col-12.col-md-6
+            label(for='email') 
+              | Email#{'\x3A'}
+              span= '\x2A'
+            input#email.form-control.rounded-0(type='email')
+          .form-group.col-12.col-md-6
+            label(for='phone') 
+              | Số điện thoại#{'\x3A'}
+              span= '\x2A'
+            input#phone.form-control.rounded-0(type='text')
+          .form-group.col-12.col-md-6
+            label(for='address') 
+              | Địa chỉ#{'\x3A'}
+              span= '\x2A'
+            input#address.form-control.rounded-0(type='text')
+        .form-check
+          input#exampleCheck1.form-check-input(type='checkbox')
+          label.form-check-label(for='exampleCheck1') Đăng ký nhân tin tức qua email
+      form.custom__form
+        h5.custom__form__title Thông tin cá nhân#{'\x3A'}
+        .form-row
+          .form-group.col-12.col-md-6
+            label(for='name') 
+              | Họ và tên#{'\x3A'}
+              span= '\x2A'
+            input#name.form-control.rounded-0(type='text')
+          .form-group.col-12.col-md-6
+            label(for='email') 
+              | Email#{'\x3A'}
+              span= '\x2A'
+            input#email.form-control.rounded-0(type='email')
+        button.btn.btn-dark.rounded-0.text-uppercase.mr-2 Đăng nhập
+        button.btn.btn-yellow.rounded-0.text-uppercase Đăng ký
