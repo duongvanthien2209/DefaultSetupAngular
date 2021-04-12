@@ -8,7 +8,7 @@
     &__item {
       &.active {
         a {
-          color: #fff;
+          color: $white;
           background-color: $yellow;
         }
       }
@@ -20,7 +20,7 @@
         color: $font-dark;
 
         &:hover {
-          color: #fff;
+          color: $white;
           background-color: $yellow;
         }
       }
@@ -44,7 +44,7 @@
         border-radius: 0;
   
         &:hover {
-          color: #fff;
+          color: $white;
           background-color: $yellow;
         }
       }
@@ -130,7 +130,7 @@
       width: 22px;
       height: 2px;
       border-radius: 1px;
-      background-color: #fff;
+      background-color: $white;
       transition: ease all .2s;
 
       &:nth-child(2), &:nth-child(3) {
@@ -170,7 +170,7 @@
 
     height: 70px;
     padding: 0 1.2rem;
-    color: #fff;
+    color: $white;
 
     &__badge {
       position: absolute;
@@ -203,7 +203,7 @@
       
           font-size: 14px;
           text-transform: uppercase;
-          color: #fff !important;
+          color: $white !important;
 
           &:hover {
             color: $yellow !important;
@@ -213,7 +213,7 @@
         &.active {
           .nav-link {
             background-color: $yellow;
-            color: #fff !important;
+            color: $white !important;
           }
         }
       }

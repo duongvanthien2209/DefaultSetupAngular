@@ -3,19 +3,12 @@ header
     .container
       .row
         .d-none.d-md-block.col-md-3.mr-md-auto
+          - let socials = ['fab fa-facebook-f', 'fab fa-google-plus-g', 'fab fa-instagram', 'fab fa-twitter']
           ul.socials.d-flex
-            li.socials__item.active
-              a.d-flex-center(href="#")
-                i.fab.fa-facebook-f 
-            li.socials__item.border-right
-              a.d-flex-center(href="#") 
-                i.fab.fa-google-plus-g
-            li.socials__item.border-right
-              a.d-flex-center(href="#") 
-                i.fab.fa-instagram
-            li.socials__item.border-right
-              a.d-flex-center(href="#") 
-                i.fab.fa-twitter
+            each social, index in socials
+              li(class= `socials__item${!index ? ' active' : ''}`)
+                a.d-flex-center(href="#")
+                  i(class= social) 
         .col-12.col-sm-4.col-lg-3
           .top-header__btns.h-100
             a.btn.d-flex-center.border.border-top-0.border-bottom-0(href="#") Đăng ký 
