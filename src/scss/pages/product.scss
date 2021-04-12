@@ -1,0 +1,81 @@
+#formGroupExampleInput1 {
+  width: 200px;
+}
+
+#formGroupExampleInput2 {
+  width: 100px;
+}
+
+.product {
+  margin-bottom: 30px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 0;
+
+    &__form {
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  
+        select {
+          position: relative;
+          width: auto;
+          background: url(../assets/images/down-arrow.svg) no-repeat right .75rem center;
+          background-size: 10px 10px;
+        }
+      }
+    }
+  }
+}
+
+.product-page {
+  display: none;
+}
+
+input[type="radio"]:checked + .product-page {
+  display: block  ;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .product {
+    &-header {
+      &__form {
+        .form-group {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .product {
+    &-header {
+      height: 55.2px;
+
+      &__form {
+        .form-group {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

@@ -67,7 +67,7 @@
   };
 - 
   var sanphamnoibat = {
-    header: { name: 'Máy khoan, cắt CNC', img: './assets/images/4-black-squares.svg', icon: 'fas fa-th-large' },
+    header: { name: 'Máy khoan, cắt CNC', icon: 'fas fa-th-large' },
     body: [
       { name: 'Máy in khổ lớn', icon: 'fas fa-th-large' },
       { name: 'Máy quét Canon 3D', icon: 'fas fa-th-large' },
@@ -102,6 +102,67 @@
     { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
     { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", danhGia: 12, stars: 3.5 },
   ]
+
+-
+  var danhmucsanpham = {
+    header: { name: 'Danh mục sản phẩm', icon: 'fas fa-th-large' },
+    body: [
+      ...sanphamnoibat.body
+    ]
+  }
+
+-
+  var timtheomucgia = {
+    header: { name: 'Tìm theo mức giá', icon: 'fas fa-dollar-sign' }, 
+    body: [
+      { name: '0 - 200.000 Đ (45)', icon: 'fas fa-th-large' },
+      { name: '200.000 Đ - 500.000 Đ (32)', icon: 'fas fa-th-large' },
+      { name: '500.000 Đ - 1000.000 Đ (27)', icon: 'fas fa-th-large' },
+      { name: '1000.000 Đ - 2000.000 Đ (16)', icon: 'fas fa-th-large' },
+      { name: 'Trên 2000.000 Đ (9)', icon: 'fas fa-th-large' },
+    ]
+  }
+
+- 
+  var timtheomausac = {
+    header: { name: 'Tìm theo màu sắc', img: './assets/images/4-black-squares.svg', icon: 'fas fa-paint-brush' }, 
+    body: [
+      { name: '0 - 200.000 Đ (45)', mamau: '#e61010' },
+      { name: '200.000 Đ - 500.000 Đ (32)', mamau: '#f5bd10' },
+      { name: '500.000 Đ - 1000.000 Đ (27)', mamau: '#0685ca' },
+      { name: '1000.000 Đ - 2000.000 Đ (16)', mamau: '#acacac' },
+      { name: 'Trên 2000.000 Đ (9)', mamau: '#252525' },
+    ]
+  }
+
+- 
+  var danhsachsanpham = [
+    { img: "./assets/images/products/1.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 3 },
+    { img: "./assets/images/products/2.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 1.5 },
+    { img: "./assets/images/products/3.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/4.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 2 },
+    { img: "./assets/images/products/5.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 2.5 },
+    { img: "./assets/images/products/6.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/7.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/8.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/10.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/11.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 1 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/13.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 2.5 },
+    { img: "./assets/images/products/9.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 3.5 },
+    { img: "./assets/images/products/10.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 5 },
+    { img: "./assets/images/products/11.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 1 },
+    { img: "./assets/images/products/12.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 4 },
+    { img: "./assets/images/products/13.png", name: "Máy khoan Black Decker", gia: "1.550.000", mota: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...', danhGia: 12, stars: 2.5 },
+  ]
+- 
+  var sanphamkhuyenmai = {
+    header: { name: 'Sản phẩm khuyến mại', img: './assets/images/4-black-squares.svg', icon: 'fas fa-gift' }, 
+    products: [
+      ...danhsachsanpham.slice(0, 5),
+    ]
+  }
 
 -
   var danhSachLogo = [

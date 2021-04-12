@@ -26,9 +26,9 @@ mixin footer_component({ title, list })
           
 //- "./assets/images/4-black-squares.svg"
 //- Cấu trúc
-//- { header: { name, icon }, body: [ { name, icon. img } ] } 
-mixin customList({ header, body }, number)
-  .custom-list.navbar.navbar-expand-lg.p-0.shadow
+//- { header: { name, icon }, body: [ { name, icon, img } ] } 
+mixin customList({ header, body, products }, number, isFixedHeight = false)
+  div(class= `custom-list navbar navbar-expand-lg p-0 shadow${products ? ' d-none d-lg-block' : ''}`)
     .custom-list__header.w-100
       h2 
         span
@@ -37,7 +37,7 @@ mixin customList({ header, body }, number)
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent1', aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
         img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
     .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
-      ul.navbar-nav.w-100.h-100
+      ul.navbar-nav.w-100.h-100 
         each val in body
           li.nav-item.active
             a.nav-link.py-lg-0.h-100(href='#')
@@ -60,6 +60,45 @@ mixin product(product, lg= false)
         span #{product.gia}Đ
         h4= product.name
         .san-pham__content__stars
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
+        img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
+    .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
+      ul.navbar-nav.w-100.h-100
+        if products
+          each product in products
+            li.nav-item.active
+              a(class=`nav-link h-100 py-0'` href='#')
+                +product(product, false, false, true)
+        else
+          each val in body
+            li.nav-item.active
+              a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}` href='#')
+                if val.icon
+                  span 
+                    i(class= val.icon)
+                if val.mamau
+                  span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
+                | #{val.name} 
+
+//- "./assets/images/products/1.png"
+//- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
+mixin product(product, lg= false, unhover = false, small =false)
+  - let sanphamclass = '';
+  if lg
+    - sanphamclass += ' san-pham--lg'
+  if unhover
+    - sanphamclass += ' sanpham--unhover'
+  if small
+    - sanphamclass += ' sanpham--small'
+
+  div(class= `san-pham card border-0 shadow-hover${sanphamclass}`)
+    .san-pham-img-top
+      img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
+    .card-body
+      div(class= `san-pham__content${unhover ? ' text-left' : ' text-center'}`)
+        span #{product.gia}Đ
+        h4= product.name
+        div(class= `san-pham__content__stars${small ? ' d-none' : ''}`)
           ul
             - var i = 1;
               while i <= product.stars
@@ -77,9 +116,14 @@ mixin product(product, lg= false)
                 i.far.fa-star
               - i++
           span (#{product.danhGia} Đánh giá)
-      .san-pham__btns  
+      if unhover
+          p= product.mota
+      div(class= `san-pham__btns${small ? ' d-none' : ''}`)  
         button.btn.btn-yellow.mr-2 Mua ngay
         button.btn.btn-black Xem chi tiết
+      //- .san-pham__btns  
+      //-   button.btn.btn-yellow.mr-2 Mua ngay
+      //-   button.btn.btn-black Xem chi tiết
 
 mixin slide-custom-header({ title, haveBody })
   h2.mr-auto 
@@ -118,7 +162,7 @@ mixin custom-carousel-1(arr, carouselNumber, items, columnClass, lgClass = false
       default:
         string = ' d-md-none';
     }
-  div(id= `carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel' data-interval='1000000')  
+  div(id= `carouselExampleControls${carouselNumber}` class= `carousel slide${string}` data-ride='carousel')  
     .carousel-inner
       while i<page
         - let childArr = arr.slice(i*items, i*items + items)
@@ -175,7 +219,7 @@ mixin custom-carousel-2(arr, carouselNumber, items, string)
 mixin breadcrumb(arr) 
   nav(aria-label='breadcrumb')
     .container
-      ol.breadcrumb.bg-white.pl-0.py-30px
+      ol.breadcrumb.bg-white.pl-0.py-30px.mb-0
         each item,index in arr
           if index !== arr.length-1
             li.breadcrumb-item

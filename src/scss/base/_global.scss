@@ -65,6 +65,11 @@ a:hover {
   padding-bottom: 30px;
 }
 
+.py-30px {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .py-50px {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -96,6 +101,17 @@ button.btn-yellow {
 
   &:hover {
     background-color: $font-dark;
+  }
+}
+
+.btn-outline-yellow {
+  border-color: $font-dark-light;
+  color: $font-dark-light;
+
+  &:hover {
+    border-color: $font-dark-light;
+    color: $yellow;
+    background-color: transparent;
   }
 }
 
@@ -157,6 +173,24 @@ button.btn-black {
   }
 }
 // End Of Custom Form
+
+// Pagination Custom
+.pagination-custom {
+  .page-item {
+    margin: 0 5px;
+
+    .page-link {
+      border-radius: 0;
+      color: $font-dark-light;
+
+      &:hover {
+        background-color: $yellow;
+        color: #fff;
+      }
+    }
+  }
+}
+// End Of Pagination Custom
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {

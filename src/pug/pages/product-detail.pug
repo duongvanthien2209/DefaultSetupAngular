@@ -1,0 +1,10 @@
+extends ../base/base.pug
+
+block content
+  +breadcrumb([{ link: '#', name: 'Trang chủ' }, { link: '#', name: 'Danh mục sản phẩm' }, { link: '#', name: 'Máy khoan CNC 3D' }])
+  section.product-detail
+    .container
+      .row
+        .col-12.col-lg-4
+          include ../partials/product-sidebar.pug
+        .col-12.col-lg-8

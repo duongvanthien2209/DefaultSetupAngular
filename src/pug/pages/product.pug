@@ -1,0 +1,55 @@
+extends ../base/base.pug
+
+block content
+  +breadcrumb([{ link: '#', name: 'Trang chủ' }, { link: '#', name: 'Danh mục sản phẩm' }])
+  section.product
+    .container
+      .row
+        .col-12.col-lg-4
+          include ../partials/product-sidebar.pug
+        .col-12.col-lg-8
+          .product-header.border-bottom.mb-4
+            form.form-inline.product-header__form.mr-auto
+              .form-group.mr-3
+                label.font-weight-bold.mr-2(for='formGroupExampleInput1') Sắp xếp theo#{'\x3A'}
+                select#formGroupExampleInput1.custom-select.rounded-0
+                  option(selected='') Tên sản phẩm
+                  - var index = 1
+                  while index <= 3
+                    option(value=`${index}`) Sản phẩm #{index++}
+              .form-group
+                label.font-weight-bold.mr-2(for='formGroupExampleInput2') Show#{'\x3A'}
+                select#formGroupExampleInput2.custom-select.rounded-0
+                  option(selected='') 0
+                  - var index1 = 1
+                  while index <= 3
+                    option(value=`${index}`)= index++
+            .product-header__btns
+              label.btn.btn-outline-dark.btn-outline-yellow.mb-0.rounded-0(for="page1")
+                i.fas.fa-bars
+              label.btn.btn-outline-dark.btn-outline-yellow.mb-0.rounded-0(for="page2") 
+                i.fas.fa-th
+
+          input(id="page1" type="radio" name="page" hidden checked)
+          .product-page
+            each product in danhsachsanpham
+              +product(product, false, true)
+          input(id="page2" type="radio" name="page" hidden)
+          .product-page
+            .row
+              each product in danhsachsanpham
+                .col-12.col-md-6.col-lg-4.h-335-98px
+                  +product(product)
+          .product-footer
+            nav(aria-label='Page navigation example')
+              ul.pagination.justify-content-end.pagination-custom
+                li.page-item.disabled
+                  a.page-link(href='#', tabindex='-1') Trang trước
+                li.page-item
+                  a.page-link(href='#') 1
+                li.page-item
+                  a.page-link(href='#') 2
+                li.page-item
+                  a.page-link(href='#') 3
+                li.page-item
+                  a.page-link(href='#') Trang cuối
