@@ -138,7 +138,8 @@
   }
 
   .carousel-control-prev {
-    left: -10%;
+    width: auto;
+    left: -30px;
 
     &-icon {
       background-image: url('../assets/images/right-arrow.svg');
@@ -147,7 +148,8 @@
   }
 
   .carousel-control-next {
-    right: -10%;
+    width: auto;
+    right: -30px;
 
     &-icon {
       background-image: url('../assets/images/right-arrow.svg');
