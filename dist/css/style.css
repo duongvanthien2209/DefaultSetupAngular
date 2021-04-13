@@ -34,6 +34,15 @@ a:hover {
 .mb-1rem {
   margin-bottom: 1rem; }
 
+.margin-bottom-15px {
+  margin-bottom: 15px; }
+
+.margin-bottom-60px {
+  margin-bottom: 60px; }
+
+.margin-bottom-50px {
+  margin-bottom: 50px; }
+
 .mb-30px {
   margin-bottom: 30px; }
 
@@ -70,11 +79,12 @@ a:hover {
     box-shadow: 0 0 10px #0000003d;
     transition-delay: .3s; }
 
-button.btn-yellow {
+.btn-yellow {
   color: #fff;
   background-color: #f5bd10;
-  transition: all 0.3s ease-out; }
-  button.btn-yellow:hover {
+  transition: all 0.3s ease-out;
+  border-color: #f5bd10; }
+  .btn-yellow:hover {
     background-color: #363636; }
 
 .btn-outline-yellow {
@@ -768,3 +778,100 @@ input[type="radio"]:checked + .product-page {
     .product-header__form .form-group {
       flex-direction: row;
       align-items: center; } }
+
+.product-detail__chitiet__img img {
+  width: 100%;
+  height: auto; }
+
+.product-detail__chitiet__img ul {
+  display: flex;
+  margin-top: 10px; }
+  .product-detail__chitiet__img ul li {
+    margin-right: 5px; }
+    .product-detail__chitiet__img ul li:last-child {
+      margin-right: 0; }
+
+.product-detail__chitiet__content__header {
+  padding-bottom: 10.93px; }
+  .product-detail__chitiet__content__header h1 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500; }
+  .product-detail__chitiet__content__header div .product-detail__stars {
+    display: flex;
+    justify-content: center; }
+    .product-detail__chitiet__content__header div .product-detail__stars ul {
+      display: flex;
+      margin-bottom: 0; }
+      .product-detail__chitiet__content__header div .product-detail__stars ul i {
+        color: #f5bd10; }
+    .product-detail__chitiet__content__header div .product-detail__stars span {
+      color: #acacac; }
+  .product-detail__chitiet__content__header div a {
+    color: #363636;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline; }
+    .product-detail__chitiet__content__header div a:hover {
+      color: #f5bd10; }
+  .product-detail__chitiet__content__header p {
+    font-size: 22px;
+    line-height: 32px;
+    color: #ff0000;
+    font-weight: 500; }
+
+.product-detail__chitiet__content__body {
+  padding: 10.93px 0; }
+  .product-detail__chitiet__content__body h5 {
+    font-size: 14px; }
+  .product-detail__chitiet__content__body p {
+    color: #acacac; }
+
+.product-detail__chitiet__content__form {
+  padding: 10.93px 0; }
+  .product-detail__chitiet__content__form label {
+    font-size: 14px;
+    font-weight: 500; }
+  .product-detail__chitiet__content__form select {
+    background: url(../assets/images/down-arrow.svg) no-repeat right 0.75rem center;
+    background-size: 10px 10px; }
+  .product-detail__chitiet__content__form form .input-group {
+    display: inline-flex;
+    width: auto; }
+    .product-detail__chitiet__content__form form .input-group input {
+      width: 80px; }
+    .product-detail__chitiet__content__form form .input-group-append {
+      display: flex;
+      flex-direction: column; }
+      .product-detail__chitiet__content__form form .input-group-append a {
+        display: flex;
+        align-items: center;
+        height: 20px;
+        padding: 0 10px;
+        color: #acacac; }
+        .product-detail__chitiet__content__form form .input-group-append a:hover {
+          color: #363636; }
+  .product-detail__chitiet__content__form button {
+    height: 42px; }
+
+.product-detail__chitiet .product-detail__thong-tin-san-pham .nav-pills .nav-item .nav-link {
+  padding: 20px 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #363636;
+  text-transform: uppercase;
+  border-bottom: none !important; }
+  .product-detail__chitiet .product-detail__thong-tin-san-pham .nav-pills .nav-item .nav-link.active {
+    background-color: #202020;
+    border: #202020;
+    color: #f5bd10; }
+
+.product-detail__chitiet .product-detail__thong-tin-san-pham .tab-content .tab-pane {
+  padding: 20px; }
+  .product-detail__chitiet .product-detail__thong-tin-san-pham .tab-content .tab-pane p {
+    line-height: 18px;
+    color: #acacac; }
+    .product-detail__chitiet .product-detail__thong-tin-san-pham .tab-content .tab-pane p br {
+      content: '';
+      display: block;
+      margin-top: 22px; }

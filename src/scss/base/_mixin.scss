@@ -1,0 +1,6 @@
+// Margin-px
+@mixin margin($direction, $number, $donvi) {
+  .margin-#{$direction}-#{$number}#{$donvi} {
+    margin-#{$direction}: #{$number}#{$donvi};
+  }
+}

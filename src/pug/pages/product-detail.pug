@@ -6,5 +6,107 @@ block content
     .container
       .row
         .col-12.col-lg-4
+          - var timtheogia1 = true
+          - var timtheomausac1 = true
+
           include ../partials/product-sidebar.pug
         .col-12.col-lg-8
+          .product-detail__chitiet.margin-bottom-50px
+            .row.margin-bottom-50px
+              .col-12.col-lg-6
+                .product-detail__chitiet__img
+                  img.border(src="./assets/images/products/2_1.png", alt="")
+                  - var index = 1
+                  ul
+                    while index <= 6
+                      li
+                        img.border(src=`./assets/images/products/${index++}.png`, alt="")
+              .col-12.col-lg-6
+                .product-detail__chitiet__content
+                  .product-detail__chitiet__content__header.border-bottom
+                    h1.mb-0 Máy khoan CNC 3D
+                    .d-flex.my-2
+                      .product-detail__stars.pr-3.border-right
+                        ul.mr-2
+                          while index > 1
+                            li
+                              if index === 2
+                                i.fas.fa-star-half-alt 
+                              else
+                                i.fas.fa-star
+                        span #{'\x28'}12 Đánh giá#{'\x29'}
+                      a.pl-3(href="#") Gửi bình luận của bạn
+                    p.mb-0 GNY: 2#{'\x2E'}350#{'\x2E'}000 Đ
+                  .product-detail__chitiet__content__body.border-bottom
+                    h5 Thông tin sản phẩm#{'\x3A'}
+                    p.mb-0 Lorem ipsum dolor sit amet#{'\x2C'} consectetur adipiscing elit#{'\x2C'} sed do eiusmod tempor incididunt ut labore et dolore magna aliqua#{'\x2E'} Ut enim ad minim veniam quis nostrud exercition ullamco laboris nisi ut aliquip ex ea commodo consequat#{'\x2E'}#{'\x2E'}#{'\x2E'}
+                  form.product-detail__chitiet__content__form.border-bottom
+                    .form-row
+                      .form-group.col-md-6.mb-0
+                        label(for='formGroupExampleInput') Size#{'\x3A'}
+                        select.custom-select.rounded-0
+                          option(selected='') #{'\x2D'}#{'\x2D'} Chọn size #{'\x2D'}#{'\x2D'}
+                          option(value='1') One
+                          option(value='2') Two
+                          option(value='3') Three
+                      .form-group.col-md-6.mb-0
+                        label(for='formGroupExampleInput2') Màu sắc#{'\x3A'}
+                        select.custom-select.rounded-0
+                          option(selected='') #{'\x2D'}#{'\x2D'} Chọn màu #{'\x2D'}#{'\x2D'}
+                          option(value='1') One
+                          option(value='2') Two
+                          option(value='3') Three
+                  .product-detail__chitiet__content__form
+                    form
+                      .d-flex(style="margin-bottom: 10.93px;")
+                        .input-group.rounded-0.border.mr-2
+                          input.form-control.rounded-0.border-left-0.border-top-0.border-bottom-0(type='text', placeholder='1', aria-label='', aria-describedby='basic-addon1')
+                          .input-group-append
+                            a(href="#") 
+                              i.fas.fa-caret-up
+                            a(href="#") 
+                              i.fas.fa-caret-down
+                        button.btn.btn-dark.btn-yellow.rounded-0 Mua ngay
+                      img.w-100(src="./assets/images/banner/5.png", alt="")
+            .product-detail__thong-tin-san-pham
+              ul#pills-tab.nav.nav-pills.flex-column.flex-md-row(role='tablist')
+                li.nav-item
+                  a#pills-home-tab.nav-link.active.rounded-0.border(data-toggle='pill', href='#pills-home', role='tab', aria-controls='pills-home', aria-selected='true') Thông tin sản phẩm
+                li.nav-item
+                  a#pills-profile-tab.nav-link.rounded-0.border(data-toggle='pill', href='#pills-profile', role='tab', aria-controls='pills-profile', aria-selected='false') Đánh giá - Nhận xét
+                li.nav-item
+                  a#pills-contact-tab.nav-link.rounded-0.border(data-toggle='pill', href='#pills-contact', role='tab', aria-controls='pills-contact', aria-selected='false') Thẻ Tags
+              #pills-tabContent.tab-content.border
+                #pills-home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='pills-home-tab')
+                  +random-text(randomText, 'mb-0')
+                #pills-profile.tab-pane.fade(role='tabpanel', aria-labelledby='pills-profile-tab')
+                  +random-text(randomText)
+                #pills-contact.tab-pane.fade(role='tabpanel', aria-labelledby='pills-contact-tab')
+                  +random-text(randomText)
+          .san-pham-noi-bat__header.san-pham-slide-custom__header
+            h2.mr-auto 
+              span 
+                i.fas.fa-th-large
+              | Sản phẩm mới
+            .san-pham-slide-custom__header__btns
+              //- 1
+              a.btn.mr-1.d-md-none(href='#carouselExampleControls5', role='button', data-slide='prev')
+                i.fas.fa-caret-left
+              a.btn.d-md-none(href='#carouselExampleControls5', role='button', data-slide='next') 
+                i.fas.fa-caret-right
+              //- 2
+              a.btn.mr-1.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='prev')
+                i.fas.fa-caret-left
+              a.btn.d-none.d-md-flex.d-lg-none(href='#carouselExampleControls6', role='button', data-slide='next') 
+                i.fas.fa-caret-right
+              //- 3
+              a.btn.mr-1.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='prev')
+                i.fas.fa-caret-left
+              a.btn.d-none.d-lg-flex(href='#carouselExampleControls7', role='button', data-slide='next') 
+                i.fas.fa-caret-right
+          .row
+            .col-12 
+              +custom-carousel-1(danhsachsanpham, 5, 1, 'col-12 col-md-6 col-lg-4 h-335-98px')
+              +custom-carousel-1(danhsachsanpham, 6, 2, 'col-12 col-md-6 col-lg-4 h-335-98px')
+              +custom-carousel-1(danhsachsanpham, 7, 3, 'col-12 col-md-6 col-lg-4 h-335-98px')
+

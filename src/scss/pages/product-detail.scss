@@ -1,0 +1,188 @@
+.product-detail {
+  &__chitiet {
+    &__img {
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      ul {
+        display: flex;
+        margin-top: 10px;
+
+        li {
+          margin-right: 5px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &__content {
+      &__header {
+        padding-bottom: 10.93px;
+
+        h1 {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 500;
+        }
+
+        div {
+          .product-detail__stars {
+            display: flex;
+            justify-content: center;
+  
+            ul {
+              display: flex;
+              margin-bottom: 0;
+  
+              i {
+                color: $yellow;
+              }
+            }
+  
+            span {
+              color: $font-dark-light;
+            }
+          }
+
+          a {
+            color: $font-dark;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: underline;
+
+            &:hover {
+              color: $yellow;
+            }
+          }
+        }
+
+        p {
+          font-size: 22px;
+          line-height: 32px;
+          color: $red;
+          font-weight: 500;
+        }
+      }
+
+      &__body {
+        padding: 10.93px 0;
+
+        h5 {
+          font-size: 14px;
+        }
+
+        p {
+          color: $font-dark-light;
+        }
+      }
+
+      &__form {
+        padding: 10.93px 0;
+
+        label {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        select {
+          background: url(../assets/images/down-arrow.svg) no-repeat right .75rem center;
+          background-size: 10px 10px;
+        }
+
+        form {
+          .input-group {
+            display: inline-flex;
+            width: auto;
+
+            input {
+              width: 80px;
+            }
+
+            &-append {
+              display: flex;
+              flex-direction: column;
+    
+              a {
+                display: flex;
+                align-items: center;
+                height: 20px;
+                padding: 0 10px;
+                color: $font-dark-light;
+    
+                &:hover {
+                  color: $font-dark;
+                }
+              }
+            }
+          }
+        }
+
+        button {
+          height: 42px;
+        }
+      }
+    }
+
+    .product-detail__thong-tin-san-pham {
+      .nav-pills {
+        .nav-item {
+          .nav-link {
+            padding: 20px 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $font-dark;
+            text-transform: uppercase;
+            border-bottom: none !important;
+
+            &.active {
+              background-color: #202020;
+              border: #202020;
+              color: $yellow;
+            }
+          }
+        }
+      }
+
+      .tab-content {
+        .tab-pane {
+          padding: 20px;
+
+          p {
+            line-height: 18px;
+            color: $font-dark-light;
+            
+            br {
+              content: '';
+              display: block;
+              margin-top: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
