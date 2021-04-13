@@ -23,6 +23,75 @@ mixin footer_component({ title, list })
             | #{listItem.name}
         else
           a(href="#")= listItem.name
+          
+
+  //- .san-pham.card.shadow-hover.border-0
+  //- div(class= `san-pham card border-0 shadow-hover ${lg ? 'san-pham--lg' : ''}`)
+  //-   .san-pham-img-top
+  //-     img(src= lg ? './assets/images/products/10.png' : product.img, alt="")
+  //-   .card-body
+  //-     .san-pham__content.text-center
+  //-       span #{product.gia}Đ
+  //-       h4= product.name
+  //-       .san-pham__content__stars
+  //-     button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
+  //-       img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
+  //-   .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
+  //-     ul.navbar-nav.w-100.h-100
+  //-       if products
+  //-         each product in products
+  //-           li.nav-item.active
+  //-             a(class=`nav-link h-100 py-0'` href='#')
+  //-               +product(product, false, false, true)
+  //-       else
+  //-         each val in body
+  //-           li.nav-item.active
+  //-             a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}` href='#')
+  //-               if val.icon
+  //-                 span 
+  //-                   i(class= val.icon)
+  //-               if val.mamau
+  //-                 span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
+  //-               | #{val.name} 
+//- "./assets/images/4-black-squares.svg"
+//- Cấu trúc
+//- { header: { name, icon }, body: [ { name, icon, img } ] } 
+mixin customList({ header, body, products, images, tags }, number, isFixedHeight = false, isBlog = false)
+  div(class= `custom-list navbar navbar-expand-lg p-0${isBlog ? '' : ' shadow'}${products || isBlog ? ' d-none d-lg-block' : ''}`)
+    div(class= `custom-list__header w-100${isBlog ? ' pl-lg-0 bg-white' : ''}`)
+      h2(class= `${isBlog ? 'text-dark' : ''}`)
+        span
+          i(class= header.icon)
+        | #{header.name}
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target=`#navbarSupportedContent${number}`, aria-controls='navbarSupportedContent1', aria-expanded='false', aria-label='Toggle navigation')
+        img(src="./assets/images/arrow-down-sign-to-navigate.svg", alt="")
+    .custom-list__body.collapse.navbar-collapse.w-100(id= 'navbarSupportedContent' + number)
+      if tags
+        .d-flex.flex-wrap
+          each tag in tags
+            a(class=`btn btn-outline-dark font-italic rounded-0 mr-2 mb-2` href='#')= tag.name
+      else
+        ul(class= `navbar-nav w-100 h-100${images ? ' d-grid-3-2' : ''}`)
+          if products
+            each product in products
+              li.nav-item.active
+                a(class=`nav-link h-100 py-0` href='#')
+                  +product(product, false, false, true)
+          else if images
+            each img in images 
+              li.nav-item.active
+                a(class=`nav-link h-100 p-0` href='#')
+                  img(src= img.img, alt="")  
+          else
+            each val in body
+              li.nav-item.active
+                a(class=`nav-link h-100${isFixedHeight ? ' py-lg-0' : ''}${isBlog ? ' pl-lg-0' : ''}` href='#')
+                  if val.icon
+                    span 
+                      i(class= val.icon)
+                  if val.mamau
+                    span.custom-list__body__mau(style= `background-color: ${val.mamau}`)
+                  | #{val.name} 
 
 //- "./assets/images/products/1.png"
 //- { img: "", name: "", gia: 0, danhGia: 0, stars: 4.5 }
