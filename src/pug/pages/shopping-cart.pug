@@ -1,0 +1,37 @@
+extends ../base/base.pug
+
+block content
+  +breadcrumb([{ link: '#', name: 'Trang chủ' }, { link: '#', name: 'Giỏ hàng' }])
+  section.shopping-cart
+    .container
+      table.table.table-bordered.table-custom
+        thead
+          tr
+            th.text-center.text-uppercase(scope='col') STT
+            th.text-center.text-uppercase(scope='col') Sản phẩm
+            th.text-center.text-uppercase(scope='col') Thông tin
+            th.text-center.text-uppercase(scope='col') Đơn giá
+            th.text-center.text-uppercase(scope='col') Số lượng
+            th.text-center.text-uppercase(scope='col') Thành tiền
+            th.text-center.text-uppercase(scope='col') Xóa
+        tbody
+          each item, index in data
+            - var str = ''
+            if index === 0
+              - str = ' border-bottom-0'
+            else if index === data.length-1
+              - str = ' border-top-0'
+            else
+              - str = ' border-bottom-0 border-top-0'
+
+            tr
+              td(class= `font-weight-bold text-center align-middle${str}`)= index+1
+              td(class= `font-weight-bold text-center align-middle${str}`)
+                img(src= item.img, alt="")
+              td(class= `font-weight-bold text-center align-middle${str}`)= item.name
+              td(class= `font-weight-bold text-center align-middle${str}`) #{item.dongia} Đ
+              td(class= `font-weight-bold text-center align-middle${str}`) 
+                input.form-control(type="number" placeholder="1")
+              td(class= `font-weight-bold text-center align-middle${str}`) #{item.dongia} Đ
+              td(class= `font-weight-bold text-center align-middle${str}`)
+                a(href="#") Xóa 

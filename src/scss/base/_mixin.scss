@@ -4,3 +4,41 @@
     margin-#{$direction}: #{$number}#{$donvi};
   }
 }
+
+// Padding-px
+@mixin padding($direction, $number, $donvi) {
+  .padding-#{$direction}-#{$number}#{$donvi} {
+    padding-#{$direction}: #{$number}#{$donvi};
+  }
+}
+
+// Grid
+@mixin grid($numbercols: 0, $numberrows: 0) {
+  .d-grid-#{$numbercols}-#{$numberrows} {
+    display: grid;
+    @if $numbercols > 0 {
+      $str: '';
+      @for $i from 1 to $numbercols+1 {
+        @if $i < $numbercols {
+          $str: $str + '1fr ';
+        }@else {
+          $str: $str + '1fr';
+        }
+      }
+
+      grid-template-columns: $str;
+    }
+
+    @if $numberrows > 0 {
+      $str: '';
+      @for $i from 1 to $numberrows+1 {
+        @if $i < $numberrows {
+          $str: $str + '1fr ';
+        }@else {
+          $str: $str + '1fr';
+        }
+      }
+      grid-template-rows: $str;
+    }
+  }
+}

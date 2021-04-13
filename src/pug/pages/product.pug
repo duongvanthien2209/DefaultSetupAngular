@@ -5,9 +5,9 @@ block content
   section.product
     .container
       .row
-        .col-12.col-lg-4
+        .col-12.col-lg-3
           include ../partials/product-sidebar.pug
-        .col-12.col-lg-8
+        .col-12.col-lg-9
           .product-header.border-bottom.mb-4
             form.form-inline.product-header__form.mr-auto
               .form-group.mr-3
@@ -41,15 +41,4 @@ block content
                 .col-12.col-md-6.col-lg-4.h-335-98px
                   +product(product)
           .product-footer
-            nav(aria-label='Page navigation example')
-              ul.pagination.justify-content-end.pagination-custom
-                li.page-item.disabled
-                  a.page-link(href='#', tabindex='-1') Trang trước
-                li.page-item
-                  a.page-link(href='#') 1
-                li.page-item
-                  a.page-link(href='#') 2
-                li.page-item
-                  a.page-link(href='#') 3
-                li.page-item
-                  a.page-link(href='#') Trang cuối
+            include ../partials/pagination.pug
