@@ -84,7 +84,6 @@
   overflow: hidden;
 
   &-img-top {
-    // padding: 0 50px;
     display: flex;
     justify-content: center;
 
@@ -235,15 +234,13 @@
 
   &.sanpham--small {
     @extend .sanpham--unhover;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     box-shadow: none;
 
     .san-pham-img-top {
       img {
         height: 80px;
-        width: 80px;
+        width: 80px !important;
       }
     }
 

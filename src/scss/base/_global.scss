@@ -80,7 +80,13 @@ a:hover {
   margin-bottom: 50px;
 }
 
+@include padding('bottom', 50, 'px');
+
 @include padding('left', 120, 'px');
+
+@include padding('right', 20, 'px');
+
+@include padding('top', 30, 'px');
 
 .p-10px {
   padding: 10px;
@@ -218,6 +224,60 @@ button.btn-black {
 }
 // End Of Pagination Custom
 
+// Custom Dropdown
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.custom-dropdown {
+  &__sub-menu {
+    position: relative;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+
+    // min-width: 200px;
+    min-width: 100%;
+    max-height: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    background-color: $black;
+
+    transition: all .3s;
+
+    &__item {
+      a {
+        color: #fff;
+        display: inline-block;
+        padding: 20px;
+      }
+
+      &:hover {
+        background-color: $yellow;
+
+        & > a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__sub-menu--left {
+    padding-left: 20px;
+  }
+
+  &:hover {
+    & > .custom-dropdown__sub-menu {
+      opacity: 1;
+      visibility: visible;
+      max-height: 1000vh;
+    }
+  }
+}
+// End Of Custom Dropdown
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
@@ -235,11 +295,59 @@ button.btn-black {
   .h-335-98px {
     height: 361px;
   }
+
+  .shadow-lg {
+    box-shadow: 0 0 10px #0000003d;
+  }
+
+  // Custom Dropdown
+  .custom-dropdown {
+    position: relative;
+
+    &__sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      min-width: 200px;
+      max-height: 0;
+
+      opacity: 0;
+      visibility: hidden;
+      background-color: #fff;
+
+      &__item {
+        a {
+          color: $font-dark;
+          display: inline-block;
+          padding: 20px;
+        }
+
+        &:hover {
+          background-color: $yellow;
+
+          & > a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &__sub-menu--left {
+      padding-left: 0;
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  .custom-dropdown--megamenu {
+    position: static;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .h-335-98px {
     height: 381px;
-  } 
-}  
+  }
+}
