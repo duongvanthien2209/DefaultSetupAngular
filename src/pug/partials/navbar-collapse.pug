@@ -1,0 +1,55 @@
+#navbarSupportedContent.collapse.navbar-collapse
+  ul.navbar-nav.mr-auto
+    li.nav-item.active.custom-dropdown.custom-dropdown--megamenu
+      a.nav-link(href='/home.html')
+        | Trang chủ 
+        span.sr-only (current)
+      ul.custom-dropdown__sub-menu.d-none.d-xl-block
+        .container.bg-white.shadow-lg.padding-top-30px
+          .row
+            - var index = 0
+            while index < nabarCollapse.length
+              .col-3.margin-bottom-50px
+                  +mainHeaderList(nabarCollapse[index++])
+                  +mainHeaderList(nabarCollapse[index++], true)
+            .col-3.padding-bottom-50px  
+                img.h-100(src="./assets/images/1.png", alt="")
+    li.nav-item.custom-dropdown
+      a.nav-link(href='#') Giới thiệu
+      ul.custom-dropdown__sub-menu.shadow-lg
+        li.custom-dropdown__sub-menu__item
+          a(href="#")
+            span.mr-2
+              i.fas.fa-caret-right 
+            | Giới thiệu chung
+        li.custom-dropdown__sub-menu__item.custom-dropdown
+          a(href="#")
+            span.mr-2
+              i.fas.fa-caret-right
+            | Hệ thống cửa hàng
+          ul.custom-dropdown__sub-menu.custom-dropdown__sub-menu--left.shadow-lg
+            - var index = 1
+            while index<=3
+              li.custom-dropdown__sub-menu__item
+                a(href="#")
+                  span.mr-2
+                    i.fas.fa-caret-right 
+                  | Hệ thống cửa hàng A#{index++}
+        li.custom-dropdown__sub-menu__item
+          a(href="#")
+            span.mr-2
+              i.fas.fa-caret-right
+            | Chính sách ưu đãi
+        li.custom-dropdown__sub-menu__item
+          a(href="#") 
+            span.mr-2 
+              i.fas.fa-caret-right
+            | Thông tin tuyền dụng
+    li.nav-item
+      a.nav-link(href='/product.html') Sản phẩm
+    li.nav-item
+      a.nav-link(href='/blog.html') Tin khuyến mãi
+    li.nav-item
+      a.nav-link(href='#') Dịch vụ
+    li.nav-item
+      a.nav-link(href='#') Liên hệ

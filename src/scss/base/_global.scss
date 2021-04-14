@@ -162,7 +162,8 @@ a:hover {
   }
 }
 
-button.btn-black {
+.btn-black {
+  color: $white;
   background-color: $font-dark;
   transition: all 0.3s ease-out;
 
@@ -271,7 +272,7 @@ button.btn-black {
 
     &__item {
       a {
-        color: #fff;
+        color: $white;
         display: inline-block;
         padding: 20px;
       }

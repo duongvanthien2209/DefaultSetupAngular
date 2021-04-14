@@ -45,7 +45,6 @@ mixin customList({ header, body, products, images, tags }, number, isFixedHeight
           if products
             each product in products
               li.nav-item.active
-                //- a(class=`nav-link h-100 py-0` href='#')
                 +product(product, false, false, true)
           else if images
             each img in images 
@@ -102,8 +101,8 @@ mixin product(product, lg= false, unhover = false, small =false)
         if unhover
           p= product.mota
       div(class= `san-pham__btns${small ? ' d-none' : ''}`)  
-        button.btn.btn-yellow.mr-2 Mua ngay
-        button.btn.btn-black Xem chi tiết
+        a.btn.btn-yellow.rounded-0.mr-2(href="") Mua ngay
+        a.btn.btn-black.rounded-0(href="/product-detail.html") Xem chi tiết
 
 mixin slide-custom-header({ title, haveBody })
   h2.mr-auto 
@@ -245,3 +244,13 @@ mixin comment(comment, index)
         span.mr-auto= comment.date 
         a(href="#") Trả lời 
       p.comment__content__text.mb-0= comment.text
+
+mixin mainHeaderList(item, mb=false) 
+  .main-header__list
+    h5 
+      img(src="./assets/images/4-black-squares.svg", alt="")
+      | #{item.title}
+    ul.list-unstyled
+      each subItem,index in item.items
+        li(class= `${index === item.items.length-1 && mb ? 'mb-0' : ''}`)
+          a(href="#")= subItem 
