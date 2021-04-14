@@ -2,47 +2,33 @@ extends ../base/base.pug
 
 block content
   +breadcrumb([{ link: '#', name: 'Trang chủ' }, { link: '#', name: 'Đăng nhập' }])
-  section.login__content
+  section.register__content
     .container
-      form.custom__form.mb-5
-        h5.custom__form__title Thông tin cá nhân#{'\x3A'}
-        .form-row
-          .form-group.col-12.col-md-6 
-            label(for='name') 
-              | Họ và tên#{'\x3A'}
-              span= '\x2A'
-            input#name.form-control.rounded-0(type='text')
-          .form-group.col-12.col-md-6
-            label(for='email') 
-              | Email#{'\x3A'}
-              span= '\x2A'
-            input#email.form-control.rounded-0(type='email')
-          .form-group.col-12.col-md-6
-            label(for='phone') 
-              | Số điện thoại#{'\x3A'}
-              span= '\x2A'
-            input#phone.form-control.rounded-0(type='text')
-          .form-group.col-12.col-md-6
-            label(for='address') 
-              | Địa chỉ#{'\x3A'}
-              span= '\x2A'
-            input#address.form-control.rounded-0(type='text')
-        .form-check
-          input#exampleCheck1.form-check-input(type='checkbox')
-          label.form-check-label(for='exampleCheck1') Đăng ký nhân tin tức qua email
-      form.custom__form
-        h5.custom__form__title Thông tin cá nhân#{'\x3A'}
-        .form-row
-          .form-group.col-12.col-md-6
-            label(for='name') 
-              | Họ và tên#{'\x3A'}
-              span= '\x2A'
-            input#name.form-control.rounded-0(type='text')
-          .form-group.col-12.col-md-6
-            label(for='email') 
-              | Email#{'\x3A'}
-              span= '\x2A'
-            input#email.form-control.rounded-0(type='email')
-        button.btn.btn-dark.rounded-0.text-uppercase.mr-2 Đăng nhập
-        button.btn.btn-yellow.rounded-0.text-uppercase Đăng ký
-        
+      .row
+        .col-12.col-md-6 
+          form.custom__form.mb-5
+            h5.custom__form__title Thông tin đăng nhập#{'\x3A'}
+            .form-group
+              label(for='name') 
+                | Họ và tên#{'\x3A'}
+                span #{'\x2A'}
+              input#name.form-control.rounded-0(type='text')
+            .form-group
+              label(for='name') 
+                | Email#{'\x3A'}
+                span #{'\x2A'}
+              input#name.form-control.rounded-0(type='email')
+            .d-flex.justify-content-between
+              .form-check.mb-3
+                input#exampleCheck1.form-check-input(type='checkbox')
+                label.form-check-label(for='exampleCheck1') Ghi nhớ đăng nhập
+              a.custom__form__link(href="#") Bạn quên mật khẩu#{'\x3F'} 
+            button.btn.btn-dark.rounded-0.text-uppercase Đăng nhập
+        .col-12.col-md-6 
+          .custom__form__content
+            h5.custom__form__title Bạn chưa có tài khoản#{'\x3F'} 
+            p.custom__form__text
+              | Đăng ký tài khoản để mua hàng nhanh hơn. Theo dõi đơn đặt hàng, vận chuyển.
+              br
+              | Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tối.
+            button.btn.btn-yellow.rounded-0.text-uppercase Đăng ký

@@ -172,6 +172,25 @@ button.btn-black {
   }
 }
 
+.btn-facebook {
+  background-color: $facebook-color;
+}
+
+.btn-google {
+  border-color: $font-dark-light;
+  color: $red;
+
+  &:hover {
+    background-color: $font-dark-light;
+    border-color: $font-dark-light;
+  }
+}
+
+.btn-red-light {
+  background-color: $red-light;
+  border-color: $red-light;
+}
+
 // Custom Form
 .custom__form__title {
   font-size: 14px;
@@ -261,7 +280,7 @@ button.btn-black {
         background-color: $yellow;
 
         & > a {
-          color: #fff;
+          color: $white;
         }
       }
     }
@@ -370,6 +389,40 @@ button.btn-black {
 }
 // End Of Custom Modal
 
+// Custom Tooltip
+
+// End Of Custom Tooltip
+.custom-tooltip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;  
+
+  height: 20px;
+  width: 20px;
+
+  background-color: $font-dark-light;
+  border-radius: 3px;
+
+  color: $white;
+
+  position: relative;
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: -6px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    box-sizing: border-box;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid $font-dark-light;
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 
@@ -377,7 +430,9 @@ button.btn-black {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  
+  // .h-335-98px {
+  //   height: 591px;
+  // }
 }
 
 // Large devices (desktops, 992px and up)
