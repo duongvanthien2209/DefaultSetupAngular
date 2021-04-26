@@ -15,7 +15,7 @@ block content
             .row.margin-bottom-50px
               .col-12.col-lg-6
                 .product-detail__chitiet__img
-                  img.border(src="./assets/images/products/2_1.png", alt="")
+                  img#product-detail-img.border(src="./assets/images/products/2_1.png", alt="")
                   - var index = 1
                   ul
                     while index <= 6
@@ -24,22 +24,22 @@ block content
               .col-12.col-lg-6
                 .product-detail__chitiet__content
                   .product-detail__chitiet__content__header.border-bottom
-                    h1.mb-0 Máy khoan CNC 3D
+                    h1.mb-0#product-detail-title Máy khoan CNC 3D
                     .d-flex.my-2
                       .product-detail__stars.pr-3.border-right
-                        ul.mr-2
+                        ul.mr-2#product-detail-stars
                           while index > 1
                             li
                               if index-- === 2
                                 i.fas.fa-star-half-alt 
                               else
                                 i.fas.fa-star
-                        span #{'\x28'}12 Đánh giá#{'\x29'}
+                        span#product-detail-reviews #{'\x28'}12 Đánh giá#{'\x29'}
                       a.pl-3(href="#") Gửi bình luận của bạn
-                    p.mb-0 GNY: 2#{'\x2E'}350#{'\x2E'}000 Đ
+                    p.mb-0#product-detail-price GNY: 2#{'\x2E'}350#{'\x2E'}000 Đ
                   .product-detail__chitiet__content__body.border-bottom
                     h5 Thông tin sản phẩm#{'\x3A'}
-                    p.mb-0 Lorem ipsum dolor sit amet#{'\x2C'} consectetur adipiscing elit#{'\x2C'} sed do eiusmod tempor incididunt ut labore et dolore magna aliqua#{'\x2E'} Ut enim ad minim veniam quis nostrud exercition ullamco laboris nisi ut aliquip ex ea commodo consequat#{'\x2E'}#{'\x2E'}#{'\x2E'}
+                    p.mb-0#product-detail-description Lorem ipsum dolor sit amet#{'\x2C'} consectetur adipiscing elit#{'\x2C'} sed do eiusmod tempor incididunt ut labore et dolore magna aliqua#{'\x2E'} Ut enim ad minim veniam quis nostrud exercition ullamco laboris nisi ut aliquip ex ea commodo consequat#{'\x2E'}#{'\x2E'}#{'\x2E'}
                   form.product-detail__chitiet__content__form.border-bottom
                     .form-row
                       .form-group.col-md-6.mb-0
@@ -129,3 +129,5 @@ block content
               +custom-carousel-1(danhsachsanpham, 6, 2, 'col-12 col-md-6 col-lg-4 h-335-98px')
               +custom-carousel-1(danhsachsanpham, 7, 3, 'col-12 col-md-6 col-lg-4 h-335-98px')
 
+block script
+  script(src="./assets/js/product-detail.js") 

@@ -31,7 +31,7 @@ block content
                 i.fas.fa-th
 
           input(id="page1" type="radio" name="page" hidden checked)
-          .product-page
+          .product-page#product-wrapper-1
             each product in danhsachsanpham
               +product(product, false, true)
           input(id="page2" type="radio" name="page" hidden)
@@ -42,3 +42,6 @@ block content
                   +product(product)
           .product-footer
             include ../partials/pagination.pug
+
+block script
+  script(src="./assets/js/product.js") 
