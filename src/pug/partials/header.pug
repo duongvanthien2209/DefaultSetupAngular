@@ -47,25 +47,25 @@ header
       .dropdown.order-lg-1
         a.cart.dropdown-toggle(href="#" id="dropdownMenu1" data-toggle="dropdown") 
           i.fas.fa-shopping-cart.fa-lg
-          span.cart__badge 0
+          span#cart-number.cart__badge 0
         .dropdown-menu.dropdown-menu-right.border-0.shadow(aria-labelledby='dropdownMenu1')
-          each cartItem, index in cart
-            div(class= `cart-item${index < cart.length-1 ? ' border-bottom' : ''}`)
-              img(src=cartItem.img, alt="")
-              .cart-item__content.text-center.mx-2
-                p.cart-item__content__title.text-uppercase= cartItem.name
-                p 
-                  | 1 x  
-                  span #{cartItem.gia} Đ
-              a(href="#") 
-                i.far.fa-times-circle 
+          #cart-items
+            each cartItem, index in cart
+              div(class= `cart-item${index < cart.length-1 ? ' border-bottom' : ''}`)
+                img(src=cartItem.img, alt="")
+                .cart-item__content.text-center.mx-2
+                  p.cart-item__content__title.text-uppercase= cartItem.name
+                  p 
+                    | 1 x  
+                    span #{cartItem.gia} Đ
+                a(href="#") 
+                  i.far.fa-times-circle 
           p.cart-total.text-uppercase.text-right
             | Tổng tiền#{'\x3A'} 
-            span 4#{'\x2E'}560#{'\x2E'}000 Đ
+            span#cart-total 4#{'\x2E'}560#{'\x2E'}000 Đ
           .d-flex.justify-content-end.margin-bottom-20px.padding-right-20px
             button.btn.btn-yellow.rounded-0.text-uppercase Thanh toán
 
       include ./navbar-collapse.pug
-      //- #navbarSupportedContent.collapse.navbar-collapse
-      //-   ul.navbar-nav.mr-auto
-      //-     +navbar__list(navbar)
+
+

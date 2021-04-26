@@ -37,9 +37,11 @@ function renderProducts(products, elementId) {
                   </div>
                   <p>${product.description}</p>
                 </div>
-                <div class="san-pham__btns"><a class="btn btn-yellow rounded-0 mr-2" href="">Mua ngay</a><a class="btn btn-black rounded-0" href="/product-detail.html?productId=${
+                <div class="san-pham__btns"><button class="btn btn-yellow rounded-0 mr-2" onClick="addToCart(${
                   product.id
-                }">Xem chi tiết</a></div>
+                },1)">Thêm vào giỏ hàng</button><a class="btn btn-black rounded-0" href="/product-detail.html?productId=${
+        product.id
+      }">Xem chi tiết</a></div>
               </div>
             </div>`;
     })
@@ -74,7 +76,6 @@ function renderPagination(currentPage) {
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
-  // loadProducts(1, 10);
   let currentPage = 1;
 
   loadProducts(currentPage);

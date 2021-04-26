@@ -10,12 +10,15 @@ const categories = [
 ];
 
 fs.readFile("./db.json", { encoding: "utf-8" }, (err, data) => {
-  let { products, categories } = JSON.parse(data);
+  // let { products, categories } = JSON.parse(data);
+  // console.log({ products, categories });
+
+  let { products } = JSON.parse(data);
   // console.log({ products, categories });
   for (let product of products) {
-    let index = Math.floor(Math.random() * 50);
+    let index = 1 + Math.floor(Math.random() * 12);
     // product.category = categories[index].id;
-    product.reviews = index;
+    product.img = `./assets/images/products/${index}.png`;
   }
   fs.writeFile("./db.json", JSON.stringify({ categories, products }), () =>
     console.log("Done")
