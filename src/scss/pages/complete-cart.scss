@@ -1,0 +1,14 @@
+.complete-cart-paymethod {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+
+  img {
+    height: 70px;
+    width: 70px;
+  }
+}

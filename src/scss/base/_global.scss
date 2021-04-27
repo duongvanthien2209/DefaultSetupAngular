@@ -92,6 +92,8 @@ a:hover {
 
 @include padding('top', 30, 'px');
 
+@include padding('top', 50, 'px');
+
 .p-10px {
   padding: 10px;
 }
@@ -111,11 +113,16 @@ a:hover {
 }
 
 .h-335-98px {
+  // height: 335.98px;
   height: 381px;
 }
 
 .h-381px {
   height: 381px;
+}
+
+.font-size-14px {
+  font-size: 14px;
 }
 
 .shadow-hover {
@@ -190,6 +197,11 @@ a:hover {
 .btn-red-light {
   background-color: $red-light;
   border-color: $red-light;
+}
+
+.img-70px-70px {
+  height: 70px;
+  width: 70px;
 }
 
 // Custom Form
