@@ -60,13 +60,13 @@ block content
                     form
                       .d-flex(style="margin-bottom: 10.93px;")
                         .input-group.rounded-0.border.mr-2
-                          input.form-control.rounded-0.border-left-0.border-top-0.border-bottom-0(type='text', placeholder='1', aria-label='', aria-describedby='basic-addon1')
-                          .input-group-append
-                            a(href="#") 
-                              i.fas.fa-caret-up
-                            a(href="#") 
-                              i.fas.fa-caret-down
-                        button.btn.btn-dark.btn-yellow.rounded-0 Mua ngay
+                          input#cart-number-input.form-control.rounded-0.border-left-0.border-top-0.border-bottom-0(type='number', aria-label='', aria-describedby='basic-addon1', value=0)
+                          //- .input-group-append
+                          //-   a#cart-number-increase(href="#") 
+                          //-     i.fas.fa-caret-up
+                          //-   a#cart-number-descrease(href="#") 
+                          //-     i.fas.fa-caret-down
+                        button#cart-pay.btn.btn-dark.btn-yellow.rounded-0 Mua ngay
                   .product-detail__chitiet__content__info.d-flex
                     a.btn.btn-primary.btn-facebook.mr-2(href="#") 
                       span.mr-1  

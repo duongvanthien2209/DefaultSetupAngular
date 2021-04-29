@@ -7,8 +7,10 @@ let obj = {
   payMethod: "Tiền mặt",
 };
 
+let cardId;
+
 // Errors [{ case: '', message: '' }]
-function checkError(inputElement, errors, obj) {
+function checkError(inputElement, errors, property) {
   let value = inputElement.value;
   let label = inputElement.nextElementSibling;
   let str = "";
@@ -21,6 +23,9 @@ function checkError(inputElement, errors, obj) {
           break;
         case "min 10":
           if (value.length <= 10) str = error.message;
+          break;
+        case "is 10":
+          if (value.length !== 10) str = error.message;
           break;
         case "is email":
           if (value.indexOf("@gmail.com") < 1) str = error.message;
@@ -45,10 +50,12 @@ function checkError(inputElement, errors, obj) {
       label.classList.add("d-none");
     }
 
-    if (!obj.name) obj.name = value;
-    else if (!obj.email) obj.email = value;
-    else if (!obj.phone) obj.phone = value;
-    else if (!obj.address) obj.address = value;
+    // if (!obj.name) obj.name = value;
+    // if (!obj.email) obj.email = value;
+    // if (!obj.phone) obj.phone = value;
+    // if (!obj.address) obj.address = value;
+
+    if (value) obj[property] = value;
 
     // console.log(obj);
   }
@@ -74,13 +81,7 @@ async function handleSubmit(
 ) {
   evt.preventDefault();
 
-  let icon = document.createElement("i");
-  icon.classList.add("fas");
-  icon.classList.add("fa-spinner");
-  icon.classList.add("fa-spin");
-  icon.classList.add("text-danger");
-  icon.classList.add("ml-2");
-  evt.target.appendChild(icon);
+  if (!cardId) return toastr.error("Có lỗi xảy ra");
 
   if (!obj.name || !obj.email || !obj.phone || !obj.address) {
     // Check not null
@@ -105,6 +106,14 @@ async function handleSubmit(
       obj
     );
   } else {
+    let icon = document.createElement("i");
+    icon.classList.add("fas");
+    icon.classList.add("fa-spinner");
+    icon.classList.add("fa-spin");
+    icon.classList.add("text-danger");
+    icon.classList.add("ml-2");
+    evt.target.appendChild(icon);
+
     // debugger;
     // Tạo cart - lưu thông tin người dùng
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -118,6 +127,7 @@ async function handleSubmit(
       products: [...cart],
       person: { ...obj },
       dateCreate: datestr,
+      status: "Đã xác nhận thông tin",
     };
 
     if (obj.note) {
@@ -125,8 +135,8 @@ async function handleSubmit(
     }
 
     let result = await axios({
-      method: "POST",
-      url: `/cart`,
+      method: "PATCH",
+      url: `/cart/${cardId}`,
       baseURL: "http://localhost:4000/",
       data: cartItem,
     });
@@ -140,12 +150,28 @@ async function handleSubmit(
 
     setTimeout(() => {
       // Chuyển trang
-      window.location.href = `http://localhost:3000/complete-cart.html?cardId=${cartId}`;
+      window.location.href = `http://localhost:3000/complete-cart.html?_cardId=${cartId}`;
     }, 3000);
   }
 }
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", async (event) => {
+  // Check card ID
+  let id = window.location.href.split("_cardId=")[1];
+
+  if (!id) return (window.location.href = "/404.html");
+  else {
+    let cart = await axios({
+      method: "GET",
+      url: `/cart/${id}`,
+      baseURL: "http://localhost:4000/",
+    });
+
+    if (!cart || (cart && cart.data.status !== "Đã xác nhận giỏ hàng")) {
+      return (window.location.href = "/404.html");
+    } else cardId = cart.data.id;
+  }
+
   // Check lỗi
   let nameInput = document.getElementById("name");
   nameInput.addEventListener("keyup", (evt) =>
@@ -155,7 +181,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         { case: "not null", message: "Bạn không được để trống" },
         { case: "min 10", message: "Tên phải nhiều hơn 10 ký tự" },
       ],
-      obj
+      "name"
     )
   );
 
@@ -167,7 +193,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         { case: "not null", message: "Bạn không được để trống" },
         { case: "is email", message: "Bạn phải nhập đúng định dạng email" },
       ],
-      obj
+      "email"
     )
   );
 
@@ -177,9 +203,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
       evt.target,
       [
         { case: "is phone number", message: "Số điện thoại chỉ có chữ số" },
-        { case: "min 10", message: "Bạn phải nhập ít nhất 10 chữ số" },
+        { case: "is 10", message: "Số điện thoại bắt buộc phải có 10 chữ số" },
       ],
-      obj
+      "phone"
     )
   );
 
@@ -188,7 +214,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     checkError(
       evt.target,
       [{ case: "not null", message: "Bạn phải nhập địa chỉ" }],
-      obj
+      "address"
     )
   );
 
